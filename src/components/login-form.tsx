@@ -51,7 +51,7 @@ export function LoginForm({
       if (response.data && response.data.access_token && response.data.refresh_token) {
         setTokens(response.data.access_token, response.data.refresh_token)
 
-        toast.success("Login berhasil!", {
+        toast.success("Masuk berhasil!", {
           description: "Selamat datang di dashboard admin"
         })
 
@@ -69,7 +69,7 @@ export function LoginForm({
         errorMessage = apiError.message
       }
 
-      toast.error("Login gagal", {
+      toast.error("Masuk gagal", {
         description: "Invalid Credentials"
       })
     } finally {
