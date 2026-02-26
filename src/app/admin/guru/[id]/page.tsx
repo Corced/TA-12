@@ -88,14 +88,14 @@ export default function ViewGuruPage() {
     }
 
     if (loading) {
-    return (
-        <div className="flex items-center justify-center h-64">
-            <div className="text-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
-                <p className="mt-2 text-gray-600">Memuat data guru...</p>
+        return (
+            <div className="flex items-center justify-center h-64">
+                <div className="text-center">
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
+                    <p className="mt-2 text-gray-600">Memuat data guru...</p>
+                </div>
             </div>
-        </div>
-    )
+        )
     }
 
     if (!guruData) {
@@ -115,219 +115,219 @@ export default function ViewGuruPage() {
 
     return (
         <div className="space-y-6 max-w-4xl mx-auto">
-                {/* Header */}
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                        <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={handleBack}
-                            className="flex items-center space-x-2"
-                        >
-                            <ArrowLeft className="h-4 w-4" />
-                            <span>Kembali</span>
-                        </Button>
-                        <div>
-                            <h1 className="text-3xl font-bold text-gray-900">Detail Data Guru</h1>
-                            <p className="text-gray-600">Informasi lengkap guru {guruData.nama}</p>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Basic Information */}
-                <Card>
-                    <CardHeader>
-                        <CardTitle className="flex items-center space-x-2">
-                            <User className="h-5 w-5" />
-                            <span>Informasi Guru</span>
-                        </CardTitle>
-                        <CardDescription>
-                            Data dasar guru dalam sistem
-                        </CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="space-y-2">
-                                <Label className="text-sm font-medium text-gray-700">Kode Guru</Label>
-                                <Input
-                                    value={guruData.kode_guru}
-                                    readOnly
-                                    className="bg-gray-50 cursor-default"
-                                />
-                            </div>
-
-                            <div className="space-y-2">
-                                <Label className="text-sm font-medium text-gray-700">Nama Lengkap</Label>
-                                <Input
-                                    value={guruData.nama}
-                                    readOnly
-                                    className="bg-gray-50 cursor-default"
-                                />
-                            </div>
-
-                            <div className="space-y-2">
-                                <Label className="text-sm font-medium text-gray-700">NIP</Label>
-                                <Input
-                                    value={guruData.nip}
-                                    readOnly
-                                    className="bg-gray-50 cursor-default"
-                                />
-                            </div>
-
-                            <div className="space-y-2">
-                                <Label className="text-sm font-medium text-gray-700 flex items-center space-x-1">
-                                    <Phone className="h-4 w-4" />
-                                    <span>No. Telepon</span>
-                                </Label>
-                                <Input
-                                    value={guruData.no_telp || '-'}
-                                    readOnly
-                                    className="bg-gray-50 cursor-default"
-                                />
-                            </div>
-                        </div>
-                    </CardContent>
-                </Card>
-
-                {/* Roles & Responsibilities */}
-                <Card>
-                    <CardHeader>
-                        <CardTitle className="flex items-center space-x-2">
-                            <Shield className="h-5 w-5" />
-                            <span>Peran & Tanggung Jawab</span>
-                        </CardTitle>
-                        <CardDescription>
-                            Peran yang diberikan kepada guru ini
-                        </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className={`flex items-center space-x-3 p-4 rounded-lg border-2 ${guruData.is_kaprog ? 'border-red-200 bg-red-50' : 'border-gray-200 bg-gray-50'
-                                }`}>
-                                <div className={`w-4 h-4 rounded border-2 flex items-center justify-center ${guruData.is_kaprog
-                                    ? 'border-red-500 bg-red-500'
-                                    : 'border-gray-300 bg-white'
-                                    }`}>
-                                    {guruData.is_kaprog && <span className="text-white text-xs">✓</span>}
-                                </div>
-                                <div>
-                                    <Label className="font-medium">
-                                        Kepala Program (Kaprog)
-                                    </Label>
-                                    <p className="text-sm text-gray-500">Mengelola program keahlian</p>
-                                </div>
-                            </div>
-
-                            <div className={`flex items-center space-x-3 p-4 rounded-lg border-2 ${guruData.is_koordinator ? 'border-blue-200 bg-blue-50' : 'border-gray-200 bg-gray-50'
-                                }`}>
-                                <div className={`w-4 h-4 rounded border-2 flex items-center justify-center ${guruData.is_koordinator
-                                    ? 'border-blue-500 bg-blue-500'
-                                    : 'border-gray-300 bg-white'
-                                    }`}>
-                                    {guruData.is_koordinator && <span className="text-white text-xs">✓</span>}
-                                </div>
-                                <div>
-                                    <Label className="font-medium">
-                                        Koordinator
-                                    </Label>
-                                    <p className="text-sm text-gray-500">Koordinasi kegiatan sekolah</p>
-                                </div>
-                            </div>
-
-                            <div className={`flex items-center space-x-3 p-4 rounded-lg border-2 ${guruData.is_pembimbing ? 'border-green-200 bg-green-50' : 'border-gray-200 bg-gray-50'
-                                }`}>
-                                <div className={`w-4 h-4 rounded border-2 flex items-center justify-center ${guruData.is_pembimbing
-                                    ? 'border-green-500 bg-green-500'
-                                    : 'border-gray-300 bg-white'
-                                    }`}>
-                                    {guruData.is_pembimbing && <span className="text-white text-xs">✓</span>}
-                                </div>
-                                <div>
-                                    <Label className="font-medium">
-                                        Pembimbing
-                                    </Label>
-                                    <p className="text-sm text-gray-500">Membimbing siswa magang</p>
-                                </div>
-                            </div>
-
-                            <div className={`flex items-center space-x-3 p-4 rounded-lg border-2 ${guruData.is_wali_kelas ? 'border-yellow-200 bg-yellow-50' : 'border-gray-200 bg-gray-50'
-                                }`}>
-                                <div className={`w-4 h-4 rounded border-2 flex items-center justify-center ${guruData.is_wali_kelas
-                                    ? 'border-yellow-500 bg-yellow-500'
-                                    : 'border-gray-300 bg-white'
-                                    }`}>
-                                    {guruData.is_wali_kelas && <span className="text-white text-xs">✓</span>}
-                                </div>
-                                <div>
-                                    <Label className="font-medium">
-                                        Wali Kelas
-                                    </Label>
-                                    <p className="text-sm text-gray-500">Mengelola kelas tertentu</p>
-                                </div>
-                            </div>
-                        </div>
-                    </CardContent>
-                </Card>
-
-                {/* System Information */}
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Informasi Sistem</CardTitle>
-                        <CardDescription>
-                            Data sistem dan riwayat perubahan
-                        </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="space-y-2">
-                                <Label className="text-sm font-medium text-gray-700">Status</Label>
-                                <Input
-                                    value={guruData.is_active ? 'Aktif' : 'Tidak Aktif'}
-                                    readOnly
-                                    className="bg-gray-50 cursor-default"
-                                />
-                            </div>
-
-                            <div className="space-y-2">
-                                <Label className="text-sm font-medium text-gray-700">Dibuat Pada</Label>
-                                <Input
-                                    value={formatDate(guruData.created_at)}
-                                    readOnly
-                                    className="bg-gray-50 cursor-default"
-                                />
-                            </div>
-
-                            <div className="space-y-2">
-                                <Label className="text-sm font-medium text-gray-700">Terakhir Diperbarui</Label>
-                                <Input
-                                    value={formatDate(guruData.updated_at)}
-                                    readOnly
-                                    className="bg-gray-50 cursor-default"
-                                />
-                            </div>
-                        </div>
-                    </CardContent>
-                </Card>
-
-                {/* Action Buttons */}
-                <div className="flex justify-between items-center">
+            {/* Header */}
+            <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-4">
                     <Button
                         variant="outline"
+                        size="sm"
                         onClick={handleBack}
                         className="flex items-center space-x-2"
                     >
                         <ArrowLeft className="h-4 w-4" />
-                        <span>Kembali ke Daftar</span>
+                        <span>Kembali</span>
                     </Button>
-
-                    <Button
-                        onClick={handleEdit}
-                        className="flex items-center space-x-2"
-                    >
-                        <Edit className="h-4 w-4" />
-                        <span>Edit Data Guru</span>
-                    </Button>
+                    <div>
+                        <h1 className="text-3xl font-bold text-gray-900">Detail Data Guru</h1>
+                        <p className="text-gray-600">Informasi lengkap guru {guruData.nama}</p>
+                    </div>
                 </div>
             </div>
+
+            {/* Basic Information */}
+            <Card>
+                <CardHeader>
+                    <CardTitle className="flex items-center space-x-2">
+                        <User className="h-5 w-5" />
+                        <span>Informasi Guru</span>
+                    </CardTitle>
+                    <CardDescription>
+                        Data dasar guru dalam sistem
+                    </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                            <Label className="text-sm font-medium text-gray-700">Kode Guru</Label>
+                            <Input
+                                value={guruData.kode_guru}
+                                readOnly
+                                className="bg-gray-50 cursor-default"
+                            />
+                        </div>
+
+                        <div className="space-y-2">
+                            <Label className="text-sm font-medium text-gray-700">Nama Lengkap</Label>
+                            <Input
+                                value={guruData.nama}
+                                readOnly
+                                className="bg-gray-50 cursor-default"
+                            />
+                        </div>
+
+                        <div className="space-y-2">
+                            <Label className="text-sm font-medium text-gray-700">NIP</Label>
+                            <Input
+                                value={guruData.nip}
+                                readOnly
+                                className="bg-gray-50 cursor-default"
+                            />
+                        </div>
+
+                        <div className="space-y-2">
+                            <Label className="text-sm font-medium text-gray-700 flex items-center space-x-1">
+                                <Phone className="h-4 w-4" />
+                                <span>No. Telepon</span>
+                            </Label>
+                            <Input
+                                value={guruData.no_telp || '-'}
+                                readOnly
+                                className="bg-gray-50 cursor-default"
+                            />
+                        </div>
+                    </div>
+                </CardContent>
+            </Card>
+
+            {/* Roles & Responsibilities */}
+            <Card>
+                <CardHeader>
+                    <CardTitle className="flex items-center space-x-2">
+                        <Shield className="h-5 w-5" />
+                        <span>Peran & Tanggung Jawab</span>
+                    </CardTitle>
+                    <CardDescription>
+                        Peran yang diberikan kepada guru ini
+                    </CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className={`flex items-center space-x-3 p-4 rounded-lg border-2 ${guruData.is_kaprog ? 'border-red-200 bg-red-50' : 'border-gray-200 bg-gray-50'
+                            }`}>
+                            <div className={`w-4 h-4 rounded border-2 flex items-center justify-center ${guruData.is_kaprog
+                                ? 'border-red-500 bg-red-500'
+                                : 'border-gray-300 bg-white'
+                                }`}>
+                                {guruData.is_kaprog && <span className="text-white text-xs">✓</span>}
+                            </div>
+                            <div>
+                                <Label className="font-medium">
+                                    Kepala Program (Kaprog)
+                                </Label>
+                                <p className="text-sm text-gray-500">Mengelola program keahlian</p>
+                            </div>
+                        </div>
+
+                        <div className={`flex items-center space-x-3 p-4 rounded-lg border-2 ${guruData.is_koordinator ? 'border-blue-200 bg-blue-50' : 'border-gray-200 bg-gray-50'
+                            }`}>
+                            <div className={`w-4 h-4 rounded border-2 flex items-center justify-center ${guruData.is_koordinator
+                                ? 'border-blue-500 bg-blue-500'
+                                : 'border-gray-300 bg-white'
+                                }`}>
+                                {guruData.is_koordinator && <span className="text-white text-xs">✓</span>}
+                            </div>
+                            <div>
+                                <Label className="font-medium">
+                                    Koordinator
+                                </Label>
+                                <p className="text-sm text-gray-500">Koordinasi kegiatan sekolah</p>
+                            </div>
+                        </div>
+
+                        <div className={`flex items-center space-x-3 p-4 rounded-lg border-2 ${guruData.is_pembimbing ? 'border-green-200 bg-green-50' : 'border-gray-200 bg-gray-50'
+                            }`}>
+                            <div className={`w-4 h-4 rounded border-2 flex items-center justify-center ${guruData.is_pembimbing
+                                ? 'border-green-500 bg-green-500'
+                                : 'border-gray-300 bg-white'
+                                }`}>
+                                {guruData.is_pembimbing && <span className="text-white text-xs">✓</span>}
+                            </div>
+                            <div>
+                                <Label className="font-medium">
+                                    Pembimbing
+                                </Label>
+                                <p className="text-sm text-gray-500">Membimbing siswa magang</p>
+                            </div>
+                        </div>
+
+                        <div className={`flex items-center space-x-3 p-4 rounded-lg border-2 ${guruData.is_wali_kelas ? 'border-yellow-200 bg-yellow-50' : 'border-gray-200 bg-gray-50'
+                            }`}>
+                            <div className={`w-4 h-4 rounded border-2 flex items-center justify-center ${guruData.is_wali_kelas
+                                ? 'border-yellow-500 bg-yellow-500'
+                                : 'border-gray-300 bg-white'
+                                }`}>
+                                {guruData.is_wali_kelas && <span className="text-white text-xs">✓</span>}
+                            </div>
+                            <div>
+                                <Label className="font-medium">
+                                    Wali Kelas
+                                </Label>
+                                <p className="text-sm text-gray-500">Mengelola kelas tertentu</p>
+                            </div>
+                        </div>
+                    </div>
+                </CardContent>
+            </Card>
+
+            {/* System Information */}
+            <Card>
+                <CardHeader>
+                    <CardTitle>Informasi Sistem</CardTitle>
+                    <CardDescription>
+                        Data sistem dan riwayat perubahan
+                    </CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                            <Label className="text-sm font-medium text-gray-700">Status</Label>
+                            <Input
+                                value={guruData.is_active ? 'Aktif' : 'Tidak Aktif'}
+                                readOnly
+                                className="bg-gray-50 cursor-default"
+                            />
+                        </div>
+
+                        <div className="space-y-2">
+                            <Label className="text-sm font-medium text-gray-700">Dibuat Pada</Label>
+                            <Input
+                                value={formatDate(guruData.created_at)}
+                                readOnly
+                                className="bg-gray-50 cursor-default"
+                            />
+                        </div>
+
+                        <div className="space-y-2">
+                            <Label className="text-sm font-medium text-gray-700">Terakhir Diperbarui</Label>
+                            <Input
+                                value={formatDate(guruData.updated_at)}
+                                readOnly
+                                className="bg-gray-50 cursor-default"
+                            />
+                        </div>
+                    </div>
+                </CardContent>
+            </Card>
+
+            {/* Action Buttons */}
+            <div className="flex justify-between items-center">
+                <Button
+                    variant="outline"
+                    onClick={handleBack}
+                    className="flex items-center space-x-2"
+                >
+                    <ArrowLeft className="h-4 w-4" />
+                    <span>Kembali ke Daftar</span>
+                </Button>
+
+                <Button
+                    onClick={handleEdit}
+                    className="flex items-center space-x-2"
+                >
+                    <Edit className="h-4 w-4" />
+                    <span>Ubah Data Guru</span>
+                </Button>
+            </div>
+        </div>
     )
 }
