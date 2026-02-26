@@ -143,7 +143,7 @@ export default function IndustriManagement() {
     },
     {
       key: 'jurusan_id',
-      label: 'Jurusan',
+      label: 'Konsentrasi Keahlian',
       sortable: true,
       render: (value: unknown) => {
         const jurusanId = value as number

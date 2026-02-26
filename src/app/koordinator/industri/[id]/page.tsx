@@ -118,9 +118,9 @@ export default function DetailIndustriPage() {
                             </div>
                             <div>
                                 <Label className={labelStyle}>
-                                    <GraduationCap className={iconStyle} /> Jurusan
+                                    <GraduationCap className={iconStyle} /> Konsentrasi Keahlian
                                 </Label>
-                                <Input readOnly value={`Jurusan yang diterima (ID: ${industri.jurusan_id})`} className={inputStyle} />
+                                <Input readOnly value={`Konsentrasi Keahlian yang diterima (ID: ${industri.jurusan_id})`} className={inputStyle} />
                             </div>
                             <div>
                                 <Label className={labelStyle}>

@@ -218,7 +218,7 @@ export default function Home() {
                     <h3 className="text-lg font-semibold text-gray-900">Laporan & Analitik</h3>
                   </div>
                   <p className="text-gray-600">
-                    Dashboard komprehensif dengan visualisasi data dan laporan yang dapat diekspor.
+                    Beranda komprehensif dengan visualisasi data dan laporan yang dapat diekspor.
                   </p>
                 </CardContent>
               </Card>
@@ -303,7 +303,7 @@ export default function Home() {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link href="/login">
                 <Button size="lg" variant="secondary" className="px-8 py-3 text-base">
-                  Akses Dashboard
+                  Akses Beranda
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>

@@ -184,7 +184,7 @@ export default function PengajuanIndividu() {
             link.click();
             toast.success("Surat berhasil dihasilkan");
         } catch (error) {
-            console.error("Error downloading surat:", error);
+            console.error("Error Mengunduh surat:", error);
             toast.error("Terjadi kesalahan");
         }
         finally {

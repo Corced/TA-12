@@ -183,7 +183,7 @@ export default function EditJurusanPage() {
             const response = await updateJurusan(parseInt(id), jurusanData)
 
             if (response) {
-                toast.success('Data jurusan berhasil diperbarui!')
+                toast.success('Data Konsentrasi Keahlian berhasil diperbarui!')
                 router.push('/admin/jurusan')
             } else {
                 toast.error('Gagal memperbarui data jurusan')
@@ -228,7 +228,7 @@ export default function EditJurusanPage() {
                         <span>Kembali</span>
                     </Button>
                     <div>
-                        <h1 className="text-3xl font-bold text-gray-900">Edit Data Jurusan</h1>
+                        <h1 className="text-3xl font-bold text-gray-900">Edit Data Konsentrasi Keahlian</h1>
                         <p className="text-gray-600">Perbarui informasi program studi dalam sistem</p>
                     </div>
                 </div>
@@ -240,7 +240,7 @@ export default function EditJurusanPage() {
                     <CardHeader>
                         <CardTitle className="flex items-center space-x-2">
                             <GraduationCap className="h-5 w-5" />
-                            <span>Informasi Jurusan</span>
+                            <span>Informasi Konsentrasi Keahlian</span>
                         </CardTitle>
                         <CardDescription>
                             Data dasar program studi untuk sistem
@@ -250,7 +250,7 @@ export default function EditJurusanPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
                                 <Label htmlFor="kode">
-                                    Kode Jurusan <span className="text-red-500">*</span>
+                                    Kode Konsentrasi Keahlian <span className="text-red-500">*</span>
                                 </Label>
                                 <Input
                                     id="kode"
@@ -397,7 +397,7 @@ export default function EditJurusanPage() {
                         ) : (
                             <>
                                 <Save className="h-4 w-4" />
-                                <span>Perbarui Data Jurusan</span>
+                                <span>Perbarui Data Konsentrasi Keahlian</span>
                             </>
                         )}
                     </Button>

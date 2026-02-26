@@ -108,7 +108,7 @@ export default function EditIndustriKoordinatorPage() {
                     }
                 }
             } catch (error) {
-                console.error("Error loading data:", error)
+                console.error("Error Memuat data:", error)
                 toast.error("Terjadi kesalahan saat memuat data")
             } finally {
                 setInitialLoading(false)

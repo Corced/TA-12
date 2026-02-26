@@ -115,7 +115,7 @@ export default function ViewJurusanPage() {
             <div className="flex items-center justify-center h-64">
                 <div className="text-center">
                     <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
-                    <p className="mt-2 text-gray-600">Memuat data jurusan...</p>
+                    <p className="mt-2 text-gray-600">Memuat data Konsentrasi Keahlian...</p>
                 </div>
             </div>
         )
@@ -127,9 +127,9 @@ export default function ViewJurusanPage() {
                 <div className="text-center">
                     <div className="text-red-600 text-6xl mb-4">⚠️</div>
                     <h2 className="text-xl font-semibold text-gray-900 mb-2">Data Tidak Ditemukan</h2>
-                    <p className="text-gray-600 mb-4">Data jurusan yang Anda cari tidak ditemukan</p>
+                    <p className="text-gray-600 mb-4">Data Konsentrasi Keahlian yang Anda cari tidak ditemukan</p>
                     <Button onClick={handleBack}>
-                        Kembali ke Daftar Jurusan
+                        Kembali ke Daftar Konsentrasi Keahlian
                     </Button>
                 </div>
             </div>
@@ -151,8 +151,8 @@ export default function ViewJurusanPage() {
                         <span>Kembali</span>
                     </Button>
                     <div>
-                        <h1 className="text-3xl font-bold text-gray-900">Detail Data Jurusan</h1>
-                        <p className="text-gray-600">Informasi lengkap program studi {jurusanData.nama}</p>
+                        <h1 className="text-3xl font-bold text-gray-900">Detail Data Konsentrasi Keahlian</h1>
+                        <p className="text-gray-600">Informasi lengkap program keahlian {jurusanData.nama}</p>
                     </div>
                 </div>
             </div>
@@ -162,7 +162,7 @@ export default function ViewJurusanPage() {
                 <CardHeader>
                     <CardTitle className="flex items-center space-x-2">
                         <BookOpen className="h-5 w-5" />
-                        <span>Informasi Jurusan</span>
+                        <span>Informasi Konsentrasi Keahlian</span>
                     </CardTitle>
                     <CardDescription>
                         Data program studi dalam sistem
@@ -171,7 +171,7 @@ export default function ViewJurusanPage() {
                 <CardContent className="space-y-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                            <Label className="text-sm font-medium text-gray-700">Kode Jurusan</Label>
+                            <Label className="text-sm font-medium text-gray-700">Kode Konsentrasi Keahlian</Label>
                             <Input
                                 value={jurusanData.kode}
                                 readOnly
@@ -180,7 +180,7 @@ export default function ViewJurusanPage() {
                         </div>
 
                         <div className="space-y-2">
-                            <Label className="text-sm font-medium text-gray-700">Nama Jurusan</Label>
+                            <Label className="text-sm font-medium text-gray-700">Nama Konsentrasi Keahlian</Label>
                             <Input
                                 value={jurusanData.nama}
                                 readOnly
@@ -188,7 +188,7 @@ export default function ViewJurusanPage() {
                             />
                         </div>
                         <div className="space-y-2">
-                            <Label className="text-sm font-medium text-gray-700">Nama Kepala Jurusan</Label>
+                            <Label className="text-sm font-medium text-gray-700">Nama Kepala Konsentrasi Keahlian</Label>
                             <Input
                                 value={kaproData.nama}
                                 readOnly
@@ -232,7 +232,7 @@ export default function ViewJurusanPage() {
                     className="flex items-center space-x-2"
                 >
                     <Edit className="h-4 w-4" />
-                    <span>Edit Data Jurusan</span>
+                    <span>Sunting Data Konsentrasi Keahlian</span>
                 </Button>
             </div>
         </div>

@@ -177,7 +177,7 @@ export default function PerizinanSiswa() {
             </SelectContent>
           </Select>
           <Button variant="outline" onClick={fetchData} className="bg-white">
-            Refresh
+            Menyegarkan
           </Button>
         </div>
       </div>

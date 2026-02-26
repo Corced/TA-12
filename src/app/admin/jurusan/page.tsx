@@ -101,7 +101,7 @@ export default function JurusanManagement() {
     },
     {
       key: 'nama',
-      label: 'Nama Jurusan',
+      label: 'Nama Konsentrasi Keahlian',
       sortable: true,
     },
     {
@@ -121,7 +121,7 @@ export default function JurusanManagement() {
       <div className="flex items-center justify-center h-64">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-2 text-gray-600">Memuat data jurusan...</p>
+          <p className="mt-2 text-gray-600">Memuat data Konsentrasi Keahlian...</p>
         </div>
       </div>
     )
@@ -145,8 +145,8 @@ export default function JurusanManagement() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">Manajemen Jurusan</h1>
-        <p className="text-gray-600">Kelola program studi dan departemen</p>
+        <h1 className="text-3xl font-bold text-gray-900">Manajemen Konsentrasi Keahlian</h1>
+        <p className="text-gray-600">Kelola program keahlian</p>
       </div>
 
       <DataTable
@@ -162,8 +162,8 @@ export default function JurusanManagement() {
         totalPages={totalPages}
         onPageChange={handlePageChange}
         searchPlaceholder="Cari berdasarkan nama..."
-        title="Daftar Jurusan"
-        addButtonText="Tambah Jurusan Baru"
+        title="Daftar Konsentrasi Keahlian"
+        addButtonText="Tambah Konsentrasi Keahlian Baru"
       />
     </div>
   )

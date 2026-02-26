@@ -140,7 +140,7 @@ export function SuratPermohonanModal({ isOpen, onClose, application, allApplicat
                                         <th className="border border-black px-2 py-1 bg-gray-100 w-[50px]">NO</th>
                                         <th className="border border-black px-2 py-1">NAMA</th>
                                         <th className="border border-black px-2 py-1 w-[100px]">KELAS</th>
-                                        <th className="border border-black px-2 py-1 w-[150px]">JURUSAN</th>
+                                        <th className="border border-black px-2 py-1 w-[150px]">Konsentrasi Keahlian</th>
                                     </tr>
                                 </thead>
                                 <tbody>

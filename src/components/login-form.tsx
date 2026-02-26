@@ -52,7 +52,7 @@ export function LoginForm({
         setTokens(response.data.access_token, response.data.refresh_token)
 
         toast.success("Login berhasil!", {
-          description: "Selamat datang di dashboard admin"
+          description: "Selamat datang di Beranda admin"
         })
 
         router.push('/admin')
@@ -107,7 +107,7 @@ export function LoginForm({
         const redirectPath = getGuruDefaultPath(guruRoleData)
 
         toast.success("Login berhasil!", {
-          description: "Selamat datang di dashboard"
+          description: "Selamat datang di Beranda"
         })
 
         router.push(redirectPath)
@@ -148,7 +148,7 @@ export function LoginForm({
 
       router.push('/siswa/beranda')
       toast.success("Login berhasil!", {
-        description: "Selamat datang di dashboard"
+        description: "Selamat datang di Beranda"
       })
 
     } catch (error: unknown) {
