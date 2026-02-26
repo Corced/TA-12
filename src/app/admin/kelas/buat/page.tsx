@@ -374,7 +374,7 @@ export default function CreateKelasPage() {
                             disabled={loading}
                             className="mr-2"
                         >
-                            Reset Form
+                            Atur Ulang Formulir
                         </Button>
                     </div>
 

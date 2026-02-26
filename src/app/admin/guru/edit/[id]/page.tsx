@@ -443,7 +443,7 @@ export default function EditGuruPage() {
                             disabled={loading}
                             className="mr-2"
                         >
-                            Reset Form
+                            Atur Ulang Formulir
                         </Button>
                     </div>
 
