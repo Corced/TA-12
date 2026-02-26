@@ -215,7 +215,7 @@ export default function PengajuanKelompok() {
                                             isApprove ? (
                                                 <>
                                                     <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                                                    Loading...
+                                                    Memuat...
                                                 </>
                                             ) : (
                                                 "Setujui"
@@ -229,7 +229,7 @@ export default function PengajuanKelompok() {
                                         {isReject ? (
                                             <>
                                                 <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                                                Loading...
+                                                Memuat...
                                             </>
                                         ) : (
                                             "Tolak"
@@ -274,7 +274,7 @@ export default function PengajuanKelompok() {
                                         <CommandItem key="loading">
                                             <div className="flex flex-col items-center gap-2 justify-center w-full">
                                                 <Loader2 className="mr-2 animate-spin" />
-                                                Loading...
+                                                Memuat...
                                             </div>
                                         </CommandItem>
                                     ) : (
@@ -313,7 +313,7 @@ export default function PengajuanKelompok() {
                             {isApprove ? (
                                 <>
                                     <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                                    Loading...
+                                    Memuat...
                                 </>
                             ) : (
                                 "Setujui"

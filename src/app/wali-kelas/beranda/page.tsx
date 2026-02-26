@@ -82,7 +82,7 @@ export default function Dashboard() {
                 <section className="bg-white mt-8 p-6 rounded-xl">
                     <div className="flex justify-between items-center mb-4">
                         <div>
-                            <h3 className="text-lg font-semibold">Data Siswa - {kelasInfo?.nama || "Loading..."}</h3>
+                            <h3 className="text-lg font-semibold">Data Siswa - {kelasInfo?.nama || "Memuat..."}</h3>
                             <p className="text-sm text-gray-500">Wali Kelas: {kelasInfo?.wali_kelas || "-"}</p>
                         </div>
                         <div className="text-sm bg-blue-50 text-blue-700 px-3 py-1 rounded-full">

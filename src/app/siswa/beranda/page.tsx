@@ -264,20 +264,20 @@ export default function Dashboard() {
                             <div className="mt-4 space-y-3">
                                 <div className="flex justify-between text-sm">
                                     <span className="text-gray-500">Industri</span>
-                                    <span className="font-medium text-gray-900">Loading...</span>
+                                    <span className="font-medium text-gray-900">Memuat...</span>
                                 </div>
                                 <div className="flex justify-between text-sm">
                                     <span className="text-gray-500">Tanggal Mulai</span>
-                                    <span className="font-medium text-gray-900">Loading...</span>
+                                    <span className="font-medium text-gray-900">Memuat...</span>
                                 </div>
                                 <div className="flex justify-between text-sm">
                                     <span className="text-gray-500">Tanggal Selesai</span>
-                                    <span className="font-medium text-gray-900">Loading...</span>
+                                    <span className="font-medium text-gray-900">Memuat...</span>
                                 </div>
                                 <div className="flex justify-between text-sm">
                                     <span className="text-gray-500">Sisa Waktu</span>
                                     <span className="font-medium text-blue-600">
-                                        Loading...
+                                    Memuat...
                                     </span>
                                 </div>
                             </div>
@@ -288,7 +288,7 @@ export default function Dashboard() {
                                 <CheckCircle2 className="w-5 h-5 mt-0.5" />
                                 <div>
                                     <p className="font-semibold">Aktif Magang</p>
-                                    <p className="mt-1">Anda saat ini sedang menjalani PKL di <span className="font-bold">{industriActive?.nama || "Loading..."}</span></p>
+                                    <p className="mt-1">Anda saat ini sedang menjalani PKL di <span className="font-bold">{industriActive?.nama || "Memuat..."}</span></p>
                                 </div>
                             </div>
 

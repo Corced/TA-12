@@ -48,7 +48,7 @@ export default function GuruManagement() {
 
       setGuru(sortedData)
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to load guru data')
+      setError(err instanceof Error ? err.message : 'Gagal memuat data guru')
     } finally {
       if (isSearch) {
         setSearchLoading(false)
@@ -83,8 +83,8 @@ export default function GuruManagement() {
       await deleteGuru(row.id)
       loadGuru(searchTerm, currentPage, !!searchTerm) // Refresh the list
     } catch (err) {
-      console.error('Failed to delete guru:', err)
-      alert('Failed to delete guru')
+      console.error('Gagal menghapus guru:', err)
+      alert('Gagal menghapus guru')
     }
   }
 
@@ -141,7 +141,7 @@ export default function GuruManagement() {
       <div className="flex items-center justify-center h-64">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-2 text-gray-600">Loading guru data...</p>
+          <p className="mt-2 text-gray-600">Memuat data guru...</p>
         </div>
       </div>
     )
@@ -152,7 +152,7 @@ export default function GuruManagement() {
       <div className="flex items-center justify-center h-64">
         <div className="text-center">
           <div className="text-red-600 text-6xl mb-4">⚠️</div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-2">Error Loading Data</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-2">Gagal Memuat Data</h2>
           <p className="text-gray-600 mb-4">{error}</p>
           <Button onClick={() => loadGuru(searchTerm)}>
             Coba Lagi

@@ -238,7 +238,7 @@ export function DataTable<T = Record<string, unknown>>({
             <div className="flex items-center justify-center h-64">
               <div className="text-center">
                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
-                <p className="mt-2 text-gray-600">Loading siswa data...</p>
+                <p className="mt-2 text-gray-600">Memuat siswa data...</p>
               </div>
             </div>
           ) : (
@@ -277,7 +277,7 @@ export function DataTable<T = Record<string, unknown>>({
                 ) : sortedData.length === 0 ? (
                   <TableRow>
                     <TableCell colSpan={columns.length + 1} className="h-24 text-center">
-                      No data found.
+                      Tidak ada data yang ditemukan.
                     </TableCell>
                   </TableRow>
                 ) : (
@@ -297,7 +297,7 @@ export function DataTable<T = Record<string, unknown>>({
                             </Button>
                           </DropdownMenuTrigger>
                           <DropdownMenuContent align="end">
-                            <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                            <DropdownMenuLabel>Aksi</DropdownMenuLabel>
                             {onView && (
                               <DropdownMenuItem onClick={() => onView(row)}>
                                 <Eye className="mr-2 h-4 w-4" />
@@ -470,9 +470,9 @@ export function DataTable<T = Record<string, unknown>>({
                   </PopoverTrigger>
                   <PopoverContent className="w-[200px] p-0">
                     <Command>
-                      <CommandInput placeholder="Search kelas..." className="h-9" />
+                      <CommandInput placeholder="Cari kelas..." className="h-9" />
                       <CommandList>
-                        <CommandEmpty>No kelas found.</CommandEmpty>
+                        <CommandEmpty>Tidak ada kelas yang ditemukan.</CommandEmpty>
                         <CommandGroup>
                           {filterData.kelas?.map((kelas) => (
                             <CommandItem key={kelas.id} value={kelas.nama} onSelect={() => {
@@ -510,9 +510,9 @@ export function DataTable<T = Record<string, unknown>>({
                   </PopoverTrigger>
                   <PopoverContent className="w-[200px] p-0" >
                     <Command>
-                      <CommandInput placeholder="Search jurusan..." className="h-9" />
+                      <CommandInput placeholder="Cari jurusan..." className="h-9" />
                       <CommandList>
-                        <CommandEmpty>No jurusan found.</CommandEmpty>
+                        <CommandEmpty>Tidak ada jurusan yang ditemukan.</CommandEmpty>
                         <CommandGroup>
                           {filterData.jurusan?.map((jurusan) => (
                             <CommandItem key={jurusan.id} value={`${jurusan.kode} - ${jurusan.nama}`} onSelect={() => {

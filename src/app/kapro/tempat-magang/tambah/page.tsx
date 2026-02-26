@@ -98,7 +98,7 @@ export default function TambahIndustriPage() {
     }
 
     if (initialLoading) {
-        return <div className="p-8">Loading...</div>
+        return <div className="p-8">Memuat...</div>
     }
 
     return (
