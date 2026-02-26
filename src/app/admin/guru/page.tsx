@@ -115,7 +115,7 @@ export default function GuruManagement() {
     },
     {
       key: 'roles',
-      label: 'Roles',
+      label: 'Peran',
       render: (value: unknown, row: Guru) => (
         <div className="flex flex-wrap gap-1">
           {row.is_koordinator && <Badge variant="default" className="text-xs">Koordinator</Badge>}
@@ -141,7 +141,7 @@ export default function GuruManagement() {
       <div className="flex items-center justify-center h-64">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-2 text-gray-600">Loading guru data...</p>
+          <p className="mt-2 text-gray-600">Memuat data guru...</p>
         </div>
       </div>
     )
@@ -164,27 +164,27 @@ export default function GuruManagement() {
 
   return (
     <div className="space-y-6">
-        <div>
-          <h1 className="text-3xl font-bold text-gray-900">Pengelolaan Data Guru</h1>
-          <p className="text-gray-600">Mengelola data dan informasi akun guru</p>
-        </div>
-
-        <DataTable
-          data={guru}
-          columns={columns}
-          onAdd={handleAdd}
-          onEdit={handleEdit}
-          onDelete={handleDelete}
-          onView={handleView}
-          onSearch={handleSearch}
-          isSearching={searchLoading}
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={handlePageChange}
-          searchPlaceholder="Cari berdasarkan nama..."
-          title="Guru List"
-          addButtonText="Tambah Guru Baru"
-        />
+      <div>
+        <h1 className="text-3xl font-bold text-gray-900">Pengelolaan Data Guru</h1>
+        <p className="text-gray-600">Mengelola data dan informasi akun guru</p>
       </div>
+
+      <DataTable
+        data={guru}
+        columns={columns}
+        onAdd={handleAdd}
+        onEdit={handleEdit}
+        onDelete={handleDelete}
+        onView={handleView}
+        onSearch={handleSearch}
+        isSearching={searchLoading}
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+        searchPlaceholder="Cari berdasarkan nama..."
+        title="Guru List"
+        addButtonText="Tambah Guru Baru"
+      />
+    </div>
   )
 }

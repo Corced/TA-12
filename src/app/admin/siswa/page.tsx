@@ -212,10 +212,10 @@ export default function SiswaManagement() {
       <div className="flex items-center justify-center h-64">
         <div className="text-center">
           <div className="text-red-600 text-6xl mb-4">⚠️</div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-2">Error Loading Data</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-2">Gagal Memuat Data</h2>
           <p className="text-gray-600 mb-4">{error}</p>
           <Button onClick={() => loadData(searchTerm)}>
-            Try Again
+            Coba Lagi
           </Button>
         </div>
       </div>
