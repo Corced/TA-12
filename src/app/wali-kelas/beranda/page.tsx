@@ -6,6 +6,8 @@ import { getWaliKelasDashboard, SiswaPklSummaryDto, WaliKelasDashboardDto } from
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Industri, ListResponse } from "@/types/api";
+import { getIndustri } from "@/api/admin/industri";
 
 export default function Dashboard() {
     const [loading, setLoading] = useState(true)
@@ -13,6 +15,7 @@ export default function Dashboard() {
     const [kelasInfo, setKelasInfo] = useState<WaliKelasDashboardDto['kelas_info'] | null>(null)
     const [searchTerm, setSearchTerm] = useState("")
     const [page, setPage] = useState(1)
+    const [dataIndustri, setDataIndustri] = useState<ListResponse<Industri> | null>(null)
 
     // Manual debounce implementation since hook might not be available
     const [debouncedSearch, setDebouncedSearch] = useState(searchTerm)
@@ -21,8 +24,23 @@ export default function Dashboard() {
         return () => clearTimeout(timer)
     }, [searchTerm])
 
+    const loadIndustri = async () => {
+        try {
+            const res = await getIndustri("", 1)
+            if (res) {
+                setDataIndustri(res.data)
+            }
+        } catch (error) {
+            console.error(error)
+            toast.error("Gagal memuat data industri")
+        } finally {
+            setLoading(false)
+        }
+    }
+
     useEffect(() => {
         loadData()
+        loadIndustri()
     }, [page, debouncedSearch])
 
     const loadData = async () => {
@@ -50,20 +68,16 @@ export default function Dashboard() {
                 {/* CARDS */}
                 <section className="grid grid-cols-1 md:grid-cols-3 gap-5">
                     <Card
-                        title="Siswa Aktif PKL"
-                        value="156"
-                        info={
-                            <span className="text-green-600 text-sm flex items-center gap-1">
-                                <ArrowUp className="w-4 h-4" /> +12% dari bulan lalu
-                            </span>
-                        }
+                        title="Total Siswa PKL"
+                        value={kelasInfo?.total_siswa || 0}
+                        info={<span className="text-green-600 text-sm flex items-center gap-1"></span>}
                         icon={GraduationCap}
                         iconStyle="bg-blue-100 text-blue-600"
                     />
 
                     <Card
                         title="Pembimbing PKL"
-                        value="38"
+                        value='10'
                         info={<span className="text-orange-500 text-sm">Penghubung sekolah & industri</span>}
                         icon={Users}
                         iconStyle="bg-orange-100 text-orange-500"
@@ -71,7 +85,7 @@ export default function Dashboard() {
 
                     <Card
                         title="Industri Partner"
-                        value="26"
+                        value={dataIndustri?.total_all || 0}
                         info={<span className="text-blue-600 text-sm">Aktif bekerjasama</span>}
                         icon={Building2}
                         iconStyle="bg-gray-200 text-gray-600"
