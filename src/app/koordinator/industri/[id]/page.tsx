@@ -195,7 +195,7 @@ export default function DetailIndustriPage() {
                         </Button>
                         <Link href={`/koordinator/industri/${id}/edit`}>
                             <Button className="bg-[#641E20] hover:bg-[#4a1216] text-white px-6">
-                                Edit
+                            Sunting
                             </Button>
                         </Link>
                     </div>

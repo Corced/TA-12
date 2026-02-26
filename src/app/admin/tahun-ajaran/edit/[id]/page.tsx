@@ -58,7 +58,7 @@ export default function EditTahunAjaranPage() {
     return (
         <div className="max-w-2xl mx-auto py-8">
             <TahunAjaranForm
-                title="Edit Tahun Ajaran"
+                title="Sunting Tahun Ajaran"
                 description="Perbarui informasi tahun ajaran."
                 initialData={data}
                 onSubmit={onSubmit}

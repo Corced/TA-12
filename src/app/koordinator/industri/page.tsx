@@ -138,9 +138,9 @@ export default function IndustriPage() {
             fetchIndustriData(1, debouncedSearch, true);
             setDeleteDialogOpen(false);
             setIndustryToDelete(null);
-            toast.success('Industry berhasil dihapus');
+            toast.success('Industri berhasil dihapus');
         } catch (error) {
-            console.error("Failed to delete", error);
+            console.error("Gagal untuk menghapus", error);
         } finally {
             setIsDeleting(false);
         }

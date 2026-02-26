@@ -413,7 +413,7 @@ export default function ViewIndustriPage() {
                     className="flex items-center space-x-2"
                 >
                     <Edit className="h-4 w-4" />
-                    <span>Edit Data Industri</span>
+                    <span>Sunting Data Industri</span>
                 </Button>
             </div>
         </div>

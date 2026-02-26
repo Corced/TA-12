@@ -284,7 +284,7 @@ export default function ViewSiswaPage() {
                         className="flex items-center space-x-2"
                     >
                         <Edit className="h-4 w-4" />
-                        <span>Edit Data Siswa</span>
+                        <span>Sunting Data Siswa</span>
                     </Button>
                 </div>
             </div>

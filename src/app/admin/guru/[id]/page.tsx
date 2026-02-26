@@ -325,7 +325,7 @@ export default function ViewGuruPage() {
                         className="flex items-center space-x-2"
                     >
                         <Edit className="h-4 w-4" />
-                        <span>Edit Data Guru</span>
+                        <span>Sunting Data Guru</span>
                     </Button>
                 </div>
             </div>
