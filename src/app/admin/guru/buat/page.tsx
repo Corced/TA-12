@@ -147,266 +147,266 @@ export default function CreateGuruPage() {
 
     return (
         <div className="space-y-6 max-w-4xl mx-auto">
-                {/* Header */}
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                        <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={handleBack}
-                            className="flex items-center space-x-2"
-                        >
-                            <ArrowLeft className="h-4 w-4" />
-                            <span>Kembali</span>
-                        </Button>
-                        <div>
-                            <h1 className="text-3xl font-bold text-gray-900">Buat Data Guru</h1>
-                            <p className="text-gray-600">Tambahkan data guru baru ke sistem dengan lengkap</p>
-                        </div>
+            {/* Header */}
+            <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-4">
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={handleBack}
+                        className="flex items-center space-x-2"
+                    >
+                        <ArrowLeft className="h-4 w-4" />
+                        <span>Kembali</span>
+                    </Button>
+                    <div>
+                        <h1 className="text-3xl font-bold text-gray-900">Buat Data Guru</h1>
+                        <p className="text-gray-600">Tambahkan data guru baru ke sistem dengan lengkap</p>
                     </div>
                 </div>
+            </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* Basic Information */}
-                    <Card>
-                        <CardHeader>
-                            <CardTitle className="flex items-center space-x-2">
-                                <User className="h-5 w-5" />
-                                <span>Informasi Guru</span>
-                            </CardTitle>
-                            <CardDescription>
-                                Data dasar guru untuk sistem
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="space-y-2">
-                                    <Label htmlFor="kode_guru">
-                                        Kode Guru <span className="text-red-500">*</span>
-                                    </Label>
-                                    <Input
-                                        id="kode_guru"
-                                        type="text"
-                                        value={formData.kode_guru}
-                                        onChange={(e) => handleInputChange('kode_guru', e.target.value.toUpperCase())}
-                                        placeholder="e.g., GR001"
-                                        className={errors.kode_guru ? 'border-red-500' : ''}
-                                    />
-                                    {errors.kode_guru && (
-                                        <p className="text-sm text-red-500 flex items-center">
-                                            <AlertCircle className="h-4 w-4 mr-1" />
-                                            {errors.kode_guru}
-                                        </p>
-                                    )}
-                                </div>
-
-                                <div className="space-y-2">
-                                    <Label htmlFor="nama">
-                                        Nama Lengkap <span className="text-red-500">*</span>
-                                    </Label>
-                                    <Input
-                                        id="nama"
-                                        type="text"
-                                        value={formData.nama}
-                                        onChange={(e) => handleInputChange('nama', e.target.value)}
-                                        placeholder="Masukkan nama lengkap"
-                                        className={errors.nama ? 'border-red-500' : ''}
-                                    />
-                                    {errors.nama && (
-                                        <p className="text-sm text-red-500 flex items-center">
-                                            <AlertCircle className="h-4 w-4 mr-1" />
-                                            {errors.nama}
-                                        </p>
-                                    )}
-                                </div>
-
-                                <div className="space-y-2">
-                                    <Label htmlFor="nip">
-                                        NIP <span className="text-red-500">*</span>
-                                    </Label>
-                                    <Input
-                                        id="nip"
-                                        type="text"
-                                        value={formData.nip}
-                                        onChange={(e) => handleInputChange('nip', e.target.value.replace(/\D/g, ''))}
-                                        placeholder="18 digit angka"
-                                        maxLength={18}
-                                        className={errors.nip ? 'border-red-500' : ''}
-                                    />
-                                    {errors.nip && (
-                                        <p className="text-sm text-red-500 flex items-center">
-                                            <AlertCircle className="h-4 w-4 mr-1" />
-                                            {errors.nip}
-                                        </p>
-                                    )}
-                                </div>
-
-                                <div className="space-y-2">
-                                    <Label htmlFor="no_telp">No. Telepon</Label>
-                                    <Input
-                                        id="no_telp"
-                                        type="tel"
-                                        value={formData.no_telp}
-                                        onChange={(e) => handleInputChange('no_telp', e.target.value)}
-                                        placeholder="e.g., 081234567890"
-                                        className={errors.no_telp ? 'border-red-500' : ''}
-                                    />
-                                    {errors.no_telp && (
-                                        <p className="text-sm text-red-500 flex items-center">
-                                            <AlertCircle className="h-4 w-4 mr-1" />
-                                            {errors.no_telp}
-                                        </p>
-                                    )}
-                                </div>
+            <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Basic Information */}
+                <Card>
+                    <CardHeader>
+                        <CardTitle className="flex items-center space-x-2">
+                            <User className="h-5 w-5" />
+                            <span>Informasi Guru</span>
+                        </CardTitle>
+                        <CardDescription>
+                            Data dasar guru untuk sistem
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="space-y-2">
+                                <Label htmlFor="kode_guru">
+                                    Kode Guru <span className="text-red-500">*</span>
+                                </Label>
+                                <Input
+                                    id="kode_guru"
+                                    type="text"
+                                    value={formData.kode_guru}
+                                    onChange={(e) => handleInputChange('kode_guru', e.target.value.toUpperCase())}
+                                    placeholder="e.g., GR001"
+                                    className={errors.kode_guru ? 'border-red-500' : ''}
+                                />
+                                {errors.kode_guru && (
+                                    <p className="text-sm text-red-500 flex items-center">
+                                        <AlertCircle className="h-4 w-4 mr-1" />
+                                        {errors.kode_guru}
+                                    </p>
+                                )}
                             </div>
 
                             <div className="space-y-2">
-                                <Label htmlFor="password">
-                                    Password <span className="text-red-500">*</span>
+                                <Label htmlFor="nama">
+                                    Nama Lengkap <span className="text-red-500">*</span>
                                 </Label>
-                                <div className="relative">
-                                    <Input
-                                        id="password"
-                                        type={showPassword ? "text" : "password"}
-                                        value={formData.password}
-                                        onChange={(e) => handleInputChange('password', e.target.value)}
-                                        placeholder="Minimal 6 karakter"
-                                        className={errors.password ? 'border-red-500' : ''}
-                                    />
-                                    <Button
-                                        type="button"
-                                        variant="ghost"
-                                        size="sm"
-                                        className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
-                                        onClick={() => setShowPassword(!showPassword)}
-                                    >
-                                        {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-                                    </Button>
-                                </div>
-                                {errors.password && (
+                                <Input
+                                    id="nama"
+                                    type="text"
+                                    value={formData.nama}
+                                    onChange={(e) => handleInputChange('nama', e.target.value)}
+                                    placeholder="Masukkan nama lengkap"
+                                    className={errors.nama ? 'border-red-500' : ''}
+                                />
+                                {errors.nama && (
                                     <p className="text-sm text-red-500 flex items-center">
                                         <AlertCircle className="h-4 w-4 mr-1" />
-                                        {errors.password}
+                                        {errors.nama}
                                     </p>
                                 )}
-                                <p className="text-sm text-gray-500">
-                                    Password akan digunakan untuk login guru ke sistem
-                                </p>
                             </div>
-                        </CardContent>
-                    </Card>
 
-                    {/* Roles & Responsibilities */}
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>Peran & Tanggung Jawab</CardTitle>
-                            <CardDescription>
-                                Pilih peran yang akan diberikan kepada guru ini
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="flex items-center space-x-3 p-3 border rounded-lg">
-                                    <Checkbox
-                                        id="is_kaprog"
-                                        checked={formData.is_kaprog}
-                                        onCheckedChange={(checked: boolean) =>
-                                            handleInputChange('is_kaprog', checked)
-                                        }
-                                    />
-                                    <div>
-                                        <Label htmlFor="is_kaprog" className="font-medium">
-                                            Kepala Program (Kaprog)
-                                        </Label>
-                                        <p className="text-sm text-gray-500">Mengelola program keahlian</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-center space-x-3 p-3 border rounded-lg">
-                                    <Checkbox
-                                        id="is_koordinator"
-                                        checked={formData.is_koordinator}
-                                        onCheckedChange={(checked: boolean) =>
-                                            handleInputChange('is_koordinator', checked)
-                                        }
-                                    />
-                                    <div>
-                                        <Label htmlFor="is_koordinator" className="font-medium">
-                                            Koordinator
-                                        </Label>
-                                        <p className="text-sm text-gray-500">Koordinasi kegiatan sekolah</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-center space-x-3 p-3 border rounded-lg">
-                                    <Checkbox
-                                        id="is_pembimbing"
-                                        checked={formData.is_pembimbing}
-                                        onCheckedChange={(checked: boolean) =>
-                                            handleInputChange('is_pembimbing', checked)
-                                        }
-                                    />
-                                    <div>
-                                        <Label htmlFor="is_pembimbing" className="font-medium">
-                                            Pembimbing
-                                        </Label>
-                                        <p className="text-sm text-gray-500">Membimbing siswa magang</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-center space-x-3 p-3 border rounded-lg">
-                                    <Checkbox
-                                        id="is_wali_kelas"
-                                        checked={formData.is_wali_kelas}
-                                        onCheckedChange={(checked: boolean) =>
-                                            handleInputChange('is_wali_kelas', checked)
-                                        }
-                                    />
-                                    <div>
-                                        <Label htmlFor="is_wali_kelas" className="font-medium">
-                                            Wali Kelas
-                                        </Label>
-                                        <p className="text-sm text-gray-500">Mengelola kelas tertentu</p>
-                                    </div>
-                                </div>
+                            <div className="space-y-2">
+                                <Label htmlFor="nip">
+                                    NIP <span className="text-red-500">*</span>
+                                </Label>
+                                <Input
+                                    id="nip"
+                                    type="text"
+                                    value={formData.nip}
+                                    onChange={(e) => handleInputChange('nip', e.target.value.replace(/\D/g, ''))}
+                                    placeholder="18 digit angka"
+                                    maxLength={18}
+                                    className={errors.nip ? 'border-red-500' : ''}
+                                />
+                                {errors.nip && (
+                                    <p className="text-sm text-red-500 flex items-center">
+                                        <AlertCircle className="h-4 w-4 mr-1" />
+                                        {errors.nip}
+                                    </p>
+                                )}
                             </div>
-                        </CardContent>
-                    </Card>
 
-
-                    {/* Submit Buttons */}
-                    <div className="flex justify-end">
-                        <div className="flex space-x-2">
-                            <Button
-                                type="button"
-                                variant="outline"
-                                onClick={handleReset}
-                                disabled={loading}
-                                className="mr-2"
-                            >
-                                Reset Form
-                            </Button>
+                            <div className="space-y-2">
+                                <Label htmlFor="no_telp">No. Telepon</Label>
+                                <Input
+                                    id="no_telp"
+                                    type="tel"
+                                    value={formData.no_telp}
+                                    onChange={(e) => handleInputChange('no_telp', e.target.value)}
+                                    placeholder="e.g., 081234567890"
+                                    className={errors.no_telp ? 'border-red-500' : ''}
+                                />
+                                {errors.no_telp && (
+                                    <p className="text-sm text-red-500 flex items-center">
+                                        <AlertCircle className="h-4 w-4 mr-1" />
+                                        {errors.no_telp}
+                                    </p>
+                                )}
+                            </div>
                         </div>
 
-                        <Button
-                            type="submit"
-                            disabled={loading}
-                            className="flex items-center space-x-2 min-w-[150px]"
-                        >
-                            {loading ? (
-                                <>
-                                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                                    <span>Menyimpan...</span>
-                                </>
-                            ) : (
-                                <>
-                                    <Save className="h-4 w-4" />
-                                    <span>Simpan Data Guru</span>
-                                </>
+                        <div className="space-y-2">
+                            <Label htmlFor="password">
+                                Password <span className="text-red-500">*</span>
+                            </Label>
+                            <div className="relative">
+                                <Input
+                                    id="password"
+                                    type={showPassword ? "text" : "password"}
+                                    value={formData.password}
+                                    onChange={(e) => handleInputChange('password', e.target.value)}
+                                    placeholder="Minimal 6 karakter"
+                                    className={errors.password ? 'border-red-500' : ''}
+                                />
+                                <Button
+                                    type="button"
+                                    variant="ghost"
+                                    size="sm"
+                                    className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                >
+                                    {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                                </Button>
+                            </div>
+                            {errors.password && (
+                                <p className="text-sm text-red-500 flex items-center">
+                                    <AlertCircle className="h-4 w-4 mr-1" />
+                                    {errors.password}
+                                </p>
                             )}
+                            <p className="text-sm text-gray-500">
+                                Password akan digunakan untuk login guru ke sistem
+                            </p>
+                        </div>
+                    </CardContent>
+                </Card>
+
+                {/* Roles & Responsibilities */}
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Peran & Tanggung Jawab</CardTitle>
+                        <CardDescription>
+                            Pilih peran yang akan diberikan kepada guru ini
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="flex items-center space-x-3 p-3 border rounded-lg">
+                                <Checkbox
+                                    id="is_kaprog"
+                                    checked={formData.is_kaprog}
+                                    onCheckedChange={(checked: boolean) =>
+                                        handleInputChange('is_kaprog', checked)
+                                    }
+                                />
+                                <div>
+                                    <Label htmlFor="is_kaprog" className="font-medium">
+                                        Kepala Program (Kaprog)
+                                    </Label>
+                                    <p className="text-sm text-gray-500">Mengelola program keahlian</p>
+                                </div>
+                            </div>
+
+                            <div className="flex items-center space-x-3 p-3 border rounded-lg">
+                                <Checkbox
+                                    id="is_koordinator"
+                                    checked={formData.is_koordinator}
+                                    onCheckedChange={(checked: boolean) =>
+                                        handleInputChange('is_koordinator', checked)
+                                    }
+                                />
+                                <div>
+                                    <Label htmlFor="is_koordinator" className="font-medium">
+                                        Koordinator
+                                    </Label>
+                                    <p className="text-sm text-gray-500">Koordinasi kegiatan sekolah</p>
+                                </div>
+                            </div>
+
+                            <div className="flex items-center space-x-3 p-3 border rounded-lg">
+                                <Checkbox
+                                    id="is_pembimbing"
+                                    checked={formData.is_pembimbing}
+                                    onCheckedChange={(checked: boolean) =>
+                                        handleInputChange('is_pembimbing', checked)
+                                    }
+                                />
+                                <div>
+                                    <Label htmlFor="is_pembimbing" className="font-medium">
+                                        Pembimbing
+                                    </Label>
+                                    <p className="text-sm text-gray-500">Membimbing siswa magang</p>
+                                </div>
+                            </div>
+
+                            <div className="flex items-center space-x-3 p-3 border rounded-lg">
+                                <Checkbox
+                                    id="is_wali_kelas"
+                                    checked={formData.is_wali_kelas}
+                                    onCheckedChange={(checked: boolean) =>
+                                        handleInputChange('is_wali_kelas', checked)
+                                    }
+                                />
+                                <div>
+                                    <Label htmlFor="is_wali_kelas" className="font-medium">
+                                        Wali Kelas
+                                    </Label>
+                                    <p className="text-sm text-gray-500">Mengelola kelas tertentu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </CardContent>
+                </Card>
+
+
+                {/* Submit Buttons */}
+                <div className="flex justify-end">
+                    <div className="flex space-x-2">
+                        <Button
+                            type="button"
+                            variant="outline"
+                            onClick={handleReset}
+                            disabled={loading}
+                            className="mr-2"
+                        >
+                            Atur Ulang Formulir
                         </Button>
                     </div>
-                </form>
-            </div>
+
+                    <Button
+                        type="submit"
+                        disabled={loading}
+                        className="flex items-center space-x-2 min-w-[150px]"
+                    >
+                        {loading ? (
+                            <>
+                                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                                <span>Menyimpan...</span>
+                            </>
+                        ) : (
+                            <>
+                                <Save className="h-4 w-4" />
+                                <span>Simpan Data Guru</span>
+                            </>
+                        )}
+                    </Button>
+                </div>
+            </form>
+        </div>
     )
 }

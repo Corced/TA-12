@@ -349,7 +349,7 @@ export default function PengajuanIndividu() {
                                                     onClick={() => generateSurat(row.application.id)}
                                                     disabled={loadingSubmit}
                                                 >
-                                                    {loadingSubmit ? "Sedang Memproses..." : "Menghasilkan Surat"}
+                                                    {loadingSubmit ? "Sedang Memproses..." : "Hasilkan Surat"}
                                                 </Button>
                                             )}
                                         </div>

@@ -276,25 +276,25 @@ export default function ViewIndustriPage() {
                     <CardHeader>
                         <CardTitle className="flex items-center space-x-2">
                             <GraduationCap className="h-5 w-5" />
-                            <span>Informasi Konsentrasi Keahlian Terkait</span>
+                            <span>Informasi Kosentrasi Keahlian Terkait</span>
                         </CardTitle>
                         <CardDescription>
-                            Program Keahlian yang terkait dengan industri ini
+                            Detail kosentrasi keahlian yang terhubung dengan industri ini
                         </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
-                                <Label className="text-sm font-medium text-gray-700">Kode Konsentrasi Keahlian</Label>
+                                <Label className="text-sm font-medium text-gray-700">Kode Kosentrasi Keahlian</Label>
                                 <Input
                                     value={jurusanData.kode}
                                     readOnly
-                                    className="bg-gray-50 cursor-default font-mono text-lg"
+                                    className="bg-gray-50 cursor-default font-mono"
                                 />
                             </div>
 
                             <div className="space-y-2">
-                                <Label className="text-sm font-medium text-gray-700">Nama Konsentrasi Keahlian</Label>
+                                <Label className="text-sm font-medium text-gray-700">Nama Kosentrasi Keahlian</Label>
                                 <Input
                                     value={jurusanData.nama}
                                     readOnly
@@ -312,7 +312,7 @@ export default function ViewIndustriPage() {
                     <CardHeader>
                         <CardTitle className="flex items-center space-x-2">
                             <User className="h-5 w-5" />
-                            <span>Informasi Person in Charge (PIC)</span>
+                            <span>Informasi Penanggung Jawab</span>
                         </CardTitle>
                         <CardDescription>
                             Data kontak person yang bertanggung jawab
@@ -321,7 +321,7 @@ export default function ViewIndustriPage() {
                     <CardContent className="space-y-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
-                                <Label className="text-sm font-medium text-gray-700">Nama PIC</Label>
+                                <Label className="text-sm font-medium text-gray-700">Nama</Label>
                                 <Input
                                     value={industriData.pic || '-'}
                                     readOnly
@@ -332,7 +332,7 @@ export default function ViewIndustriPage() {
                             <div className="space-y-2">
                                 <Label className="text-sm font-medium text-gray-700 flex items-center space-x-1">
                                     <Phone className="h-4 w-4" />
-                                    <span>No. Telepon PIC</span>
+                                    <span>No. Telepon</span>
                                 </Label>
                                 <Input
                                     value={industriData.pic_telp || '-'}

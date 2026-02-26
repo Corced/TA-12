@@ -51,8 +51,8 @@ export function LoginForm({
       if (response.data && response.data.access_token && response.data.refresh_token) {
         setTokens(response.data.access_token, response.data.refresh_token)
 
-        toast.success("Login berhasil!", {
-          description: "Selamat datang di Beranda admin"
+        toast.success("Masuk berhasil!", {
+          description: "Selamat datang di Beranda Admin"
         })
 
         router.push('/admin')
@@ -69,7 +69,7 @@ export function LoginForm({
         errorMessage = apiError.message
       }
 
-      toast.error("Login gagal", {
+      toast.error("Masuk gagal", {
         description: "Invalid Credentials"
       })
     } finally {
@@ -106,25 +106,25 @@ export function LoginForm({
         // Get redirect path based on role priority
         const redirectPath = getGuruDefaultPath(guruRoleData)
 
-        toast.success("Login berhasil!", {
+        toast.success("Masuk berhasil!", {
           description: "Selamat datang di Beranda"
         })
 
         router.push(redirectPath)
       }
     } catch (err: unknown) {
-      let errorMessage = 'Kode guru atau password salah'
+      let errorMessage = 'Kode guru atau Kata Sandi salah'
 
       const apiError = err as ApiError
       if (apiError.response?.data?.error?.code == "INVALID_CREDENTIALS") {
-        errorMessage = 'Kode guru atau password salah'
+        errorMessage = 'Kode guru atau Kata Sandi salah'
       } else if (apiError.request) {
         errorMessage = 'Tidak dapat terhubung ke server'
       } else if (apiError.message) {
         errorMessage = apiError.message
       }
 
-      toast.error("Login gagal", {
+      toast.error("Masuk gagal", {
         description: errorMessage
       })
     } finally {
@@ -147,8 +147,8 @@ export function LoginForm({
       }
 
       router.push('/siswa/beranda')
-      toast.success("Login berhasil!", {
-        description: "Selamat datang di Beranda"
+      toast.success("Masuk berhasil!", {
+        description: "Selamat datang di Beranda Siswa"
       })
 
     } catch (error: unknown) {

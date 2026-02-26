@@ -248,6 +248,19 @@ export default function PengajuanPKLPage() {
         return acc;
     }, {} as Record<string, PklPengajuanTerbaru[]>);
 
+    const statusIndo = (status: string) => {
+        switch (status) {
+            case "Pending":
+                return "Menunggu";
+            case "Approved":
+                return "Disetujui";
+            case "Rejected":
+                return "Ditolak";
+            default:
+                return status;
+        }
+    }
+
     return (
         <div className="container mx-auto p-6 space-y-6">
             <h1 className="text-3xl font-bold">Pengajuan PKL</h1>
@@ -337,7 +350,7 @@ export default function PengajuanPKLPage() {
                                     <TableRow>
                                         <TableCell colSpan={6} className="text-center py-10">
                                             <div className="flex justify-center items-center gap-2">
-                                                <Loader2 className="h-4 w-4 animate-spin" /> Memuat...
+                                                <Loader2 className="h-4 w-4 animate-spin" /> Memuat data...
                                             </div>
                                         </TableCell>
                                     </TableRow>
@@ -394,7 +407,7 @@ export default function PengajuanPKLPage() {
                                                                     (app.status === "Pending" || app.status === "Menunggu") ? "bg-yellow-500 hover:bg-yellow-600 text-white" : ""
                                                             }
                                                         >
-                                                            {app.status}
+                                                            {statusIndo(app.status)}
                                                         </Badge>
                                                     </TableCell>
                                                 </TableRow>

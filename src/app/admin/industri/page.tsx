@@ -118,7 +118,7 @@ export default function IndustriManagement() {
   // Helper function to get jurusan name by id
   const getJurusanName = (jurusanId: number) => {
     const jurusanItem = jurusan.find(j => j.id === jurusanId)
-    const result = jurusanItem ? jurusanItem.nama : `Jurusan ID: ${jurusanId}`
+    const result = jurusanItem ? jurusanItem.nama : `Kosentrasi Keahlian ID: ${jurusanId}`
     return result
   }
 
@@ -143,7 +143,7 @@ export default function IndustriManagement() {
     },
     {
       key: 'jurusan_id',
-      label: 'Konsentrasi Keahlian',
+      label: 'Kosentrasi Keahlian',
       sortable: true,
       render: (value: unknown) => {
         const jurusanId = value as number
@@ -172,7 +172,7 @@ export default function IndustriManagement() {
       <div className="flex items-center justify-center h-64">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-2 text-gray-600">Memuat data industri...</p>
+          <p className="mt-2 text-gray-600">Memuat Data Industri...</p>
         </div>
       </div>
     )

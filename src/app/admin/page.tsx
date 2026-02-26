@@ -61,6 +61,7 @@ function AdminDashboard() {
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
           <p className="mt-2 text-gray-600">Memuat Beranda...</p>
+          <p className="mt-2 text-gray-600">Memuat Beranda...</p>
         </div>
       </div>
     )
@@ -137,7 +138,7 @@ function AdminDashboard() {
         <StatisticsCard
           title="Konsentrasi Keahlian"
           value={stats?.total_jurusan}
-          description="Program keahlian"
+          description="Konsentrasi keahlian"
           icon={BookOpen}
           variant="default"
         />

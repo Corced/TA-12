@@ -84,12 +84,12 @@ export default function EditJurusanPage() {
                         kaprog_guru_id: jurusanData.kaprog_guru_id || 0
                     })
                 } else {
-                    toast.error('Data jurusan tidak ditemukan')
+                    toast.error('Data kosentrasi keahlian tidak ditemukan')
                     router.push('/admin/jurusan')
                 }
             } catch (error) {
                 console.error('Load jurusan error:', error)
-                toast.error('Gagal memuat data jurusan')
+                toast.error('Gagal memuat data kosentrasi keahlian')
                 router.push('/admin/jurusan')
             } finally {
                 setLoadingData(false)
@@ -121,21 +121,21 @@ export default function EditJurusanPage() {
 
         // Required fields validation
         if (!formData.kode.trim()) {
-            newErrors.kode = 'Kode jurusan wajib diisi'
+            newErrors.kode = 'Kode kosentrasi keahlian wajib diisi'
         } else if (formData.kode.trim().length < 2) {
-            newErrors.kode = 'Kode jurusan minimal 2 karakter'
+            newErrors.kode = 'Kode kosentrasi keahlian minimal 2 karakter'
         } else if (formData.kode.trim().length > 10) {
-            newErrors.kode = 'Kode jurusan maksimal 10 karakter'
+            newErrors.kode = 'Kode kosentrasi keahlian maksimal 10 karakter'
         } else if (!/^[A-Z0-9\-_]+$/.test(formData.kode.trim())) {
-            newErrors.kode = 'Kode jurusan hanya boleh menggunakan huruf kapital, angka, dash (-), dan underscore (_)'
+            newErrors.kode = 'Kode kosentrasi keahlian hanya boleh menggunakan huruf kapital, angka, dash (-), dan underscore (_)'
         }
 
         if (!formData.nama.trim()) {
-            newErrors.nama = 'Nama jurusan wajib diisi'
+            newErrors.nama = 'Nama kosentrasi keahlian wajib diisi'
         } else if (formData.nama.trim().length < 3) {
-            newErrors.nama = 'Nama jurusan minimal 3 karakter'
+            newErrors.nama = 'Nama kosentrasi keahlian minimal 3 karakter'
         } else if (formData.nama.trim().length > 100) {
-            newErrors.nama = 'Nama jurusan maksimal 100 karakter'
+            newErrors.nama = 'Nama kosentrasi keahlian maksimal 100 karakter'
         }
 
         if (!formData.kaprog_guru_id || formData.kaprog_guru_id === 0) {
@@ -150,7 +150,7 @@ export default function EditJurusanPage() {
         )
 
         if (isDuplicate) {
-            const duplicateError = 'Kombinasi Kode dan Nama Jurusan sudah ada dalam sistem'
+            const duplicateError = 'Kombinasi Kode dan Nama Kosentrasi Keahlian sudah ada dalam sistem'
             newErrors.kode = duplicateError
             newErrors.nama = duplicateError
         }
@@ -183,14 +183,14 @@ export default function EditJurusanPage() {
             const response = await updateJurusan(parseInt(id), jurusanData)
 
             if (response) {
-                toast.success('Data Konsentrasi Keahlian berhasil diperbarui!')
+                toast.success('Data kosentrasi keahlian berhasil diperbarui!')
                 router.push('/admin/jurusan')
             } else {
-                toast.error('Gagal memperbarui data jurusan')
+                toast.error('Gagal memperbarui data kosentrasi keahlian')
             }
         } catch (error) {
             console.error('Update jurusan error:', error)
-            toast.error('Terjadi kesalahan saat memperbarui data jurusan')
+            toast.error('Terjadi kesalahan saat memperbarui data kosentrasi keahlian')
         } finally {
             setLoading(false)
         }
@@ -207,7 +207,7 @@ export default function EditJurusanPage() {
             <div className="flex items-center justify-center h-64">
                 <div className="text-center">
                     <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
-                    <p className="mt-2 text-gray-600">Memuat data jurusan...</p>
+                    <p className="mt-2 text-gray-600">Memuat data kosentrasi keahlian...</p>
                 </div>
             </div>
         )
@@ -228,7 +228,7 @@ export default function EditJurusanPage() {
                         <span>Kembali</span>
                     </Button>
                     <div>
-                        <h1 className="text-3xl font-bold text-gray-900">Sunting Data Konsentrasi Keahlian</h1>
+                        <h1 className="text-3xl font-bold text-gray-900">Ubah Data Kosentrasi Keahlian</h1>
                         <p className="text-gray-600">Perbarui informasi program studi dalam sistem</p>
                     </div>
                 </div>
@@ -240,7 +240,7 @@ export default function EditJurusanPage() {
                     <CardHeader>
                         <CardTitle className="flex items-center space-x-2">
                             <GraduationCap className="h-5 w-5" />
-                            <span>Informasi Konsentrasi Keahlian</span>
+                            <span>Informasi Kosentrasi Keahlian</span>
                         </CardTitle>
                         <CardDescription>
                             Data dasar program studi untuk sistem
@@ -250,7 +250,7 @@ export default function EditJurusanPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
                                 <Label htmlFor="kode">
-                                    Kode Konsentrasi Keahlian <span className="text-red-500">*</span>
+                                    Kode Kosentrasi Keahlian <span className="text-red-500">*</span>
                                 </Label>
                                 <Input
                                     id="kode"
@@ -275,7 +275,7 @@ export default function EditJurusanPage() {
                             <div className="space-y-2">
                                 <Label htmlFor="nama" className="flex items-center space-x-1">
                                     <BookOpen className="h-4 w-4" />
-                                    <span>Nama Jurusan <span className="text-red-500">*</span></span>
+                                    <span>Nama Kosentrasi Keahlian <span className="text-red-500">*</span></span>
                                 </Label>
                                 <Input
                                     id="nama"
@@ -375,7 +375,7 @@ export default function EditJurusanPage() {
                                 <div className="text-sm text-blue-800">
                                     <span className="font-semibold">{formData.kode.trim().toUpperCase() || '[KODE]'}</span>
                                     {' - '}
-                                    <span>{formData.nama.trim() || '[NAMA JURUSAN]'}</span>
+                                    <span>{formData.nama.trim() || '[NAMA KOSENTRASI KEAHLIAN]'}</span>
                                 </div>
                             </div>
                         )}
@@ -397,7 +397,7 @@ export default function EditJurusanPage() {
                         ) : (
                             <>
                                 <Save className="h-4 w-4" />
-                                <span>Perbarui Data Konsentrasi Keahlian</span>
+                                <span>Perbarui Data Kosentrasi Keahlian</span>
                             </>
                         )}
                     </Button>

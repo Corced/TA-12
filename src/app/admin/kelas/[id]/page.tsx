@@ -164,7 +164,7 @@ export default function ViewKelasPage() {
                             />
                         </div>
                         <div className="space-y-2">
-                            <Label className="text-sm font-medium text-gray-700">Kode Konsentrasi Keahlian</Label>
+                            <Label className="text-sm font-medium text-gray-700">Kode Kosentrasi Keahlian</Label>
                             <Input
                                 value={jurusanData?.kode}
                                 readOnly
@@ -173,7 +173,7 @@ export default function ViewKelasPage() {
                         </div>
 
                         <div className="space-y-2">
-                            <Label className="text-sm font-medium text-gray-700">Nama Konsentrasi Keahlian</Label>
+                            <Label className="text-sm font-medium text-gray-700">Nama Kosentrasi Keahlian</Label>
                             <Input
                                 value={jurusanData?.nama}
                                 readOnly

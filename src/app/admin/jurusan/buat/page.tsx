@@ -85,21 +85,21 @@ export default function CreateJurusanPage() {
 
         // Required fields validation
         if (!formData.kode.trim()) {
-            newErrors.kode = 'Kode jurusan wajib diisi'
+            newErrors.kode = 'Kode kosentrasi keahlian wajib diisi'
         } else if (formData.kode.trim().length < 2) {
-            newErrors.kode = 'Kode jurusan minimal 2 karakter'
+            newErrors.kode = 'Kode kosentrasi keahlian minimal 2 karakter'
         } else if (formData.kode.trim().length > 10) {
-            newErrors.kode = 'Kode jurusan maksimal 10 karakter'
+            newErrors.kode = 'Kode kosentrasi keahlian maksimal 10 karakter'
         } else if (!/^[A-Z0-9\-_]+$/.test(formData.kode.trim())) {
-            newErrors.kode = 'Kode jurusan hanya boleh menggunakan huruf kapital, angka, dash (-), dan underscore (_)'
+            newErrors.kode = 'Kode kosentrasi keahlian hanya boleh menggunakan huruf kapital, angka, dash (-), dan underscore (_)'
         }
 
         if (!formData.nama.trim()) {
-            newErrors.nama = 'Nama jurusan wajib diisi'
+            newErrors.nama = 'Nama kosentrasi keahlian wajib diisi'
         } else if (formData.nama.trim().length < 3) {
-            newErrors.nama = 'Nama jurusan minimal 3 karakter'
+            newErrors.nama = 'Nama kosentrasi keahlian minimal 3 karakter'
         } else if (formData.nama.trim().length > 100) {
-            newErrors.nama = 'Nama jurusan maksimal 100 karakter'
+            newErrors.nama = 'Nama kosentrasi keahlian maksimal 100 karakter'
         }
 
         if (!formData.kaprog_guru_id || formData.kaprog_guru_id === 0) {
@@ -113,7 +113,7 @@ export default function CreateJurusanPage() {
         )
 
         if (isDuplicate) {
-            const duplicateError = 'Kombinasi Kode dan Nama Jurusan sudah ada dalam sistem'
+            const duplicateError = 'Kombinasi Kode dan Nama Kosentrasi Keahlian sudah ada dalam sistem'
             newErrors.kode = duplicateError
             newErrors.nama = duplicateError
         }
@@ -147,14 +147,14 @@ export default function CreateJurusanPage() {
             const response = await createJurusan(jurusanData)
 
             if (response) {
-                toast.success('Data jurusan berhasil dibuat!')
+                toast.success('Data kosentrasi keahlian berhasil dibuat!')
                 router.push('/admin/jurusan')
             } else {
-                toast.error('Gagal membuat data jurusan')
+                toast.error('Gagal membuat data kosentrasi keahlian')
             }
         } catch (error) {
             console.error('Create jurusan error:', error)
-            toast.error('Terjadi kesalahan saat membuat data jurusan')
+            toast.error('Terjadi kesalahan saat membuat data kosentrasi keahlian')
         } finally {
             setLoading(false)
         }
@@ -363,7 +363,7 @@ export default function CreateJurusanPage() {
                         ) : (
                             <>
                                 <Save className="h-4 w-4" />
-                                <span>Simpan Data Konsenstrasi Keahlian</span>
+                                <span>Simpan Data Kosentrasi Keahlian</span>
                             </>
                         )}
                     </Button>

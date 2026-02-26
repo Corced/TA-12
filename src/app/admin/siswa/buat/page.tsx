@@ -180,233 +180,233 @@ export default function CreateSiswaPage() {
 
     return (
         <div className="space-y-6 max-w-4xl mx-auto">
-                {/* Header */}
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                        <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={handleBack}
-                            className="flex items-center space-x-2"
-                        >
-                            <ArrowLeft className="h-4 w-4" />
-                            <span>Kembali</span>
-                        </Button>
-                        <div>
-                            <h1 className="text-3xl font-bold text-gray-900">Buat Data Siswa</h1>
-                            <p className="text-gray-600">Tambahkan data siswa baru ke sistem</p>
-                        </div>
+            {/* Header */}
+            <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-4">
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={handleBack}
+                        className="flex items-center space-x-2"
+                    >
+                        <ArrowLeft className="h-4 w-4" />
+                        <span>Kembali</span>
+                    </Button>
+                    <div>
+                        <h1 className="text-3xl font-bold text-gray-900">Buat Data Siswa</h1>
+                        <p className="text-gray-600">Tambahkan data siswa baru ke sistem</p>
                     </div>
                 </div>
+            </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* Basic Information */}
-                    <Card>
-                        <CardHeader>
-                            <CardTitle className="flex items-center space-x-2">
-                                <User className="h-5 w-5" />
-                                <span>Informasi Pribadi</span>
-                            </CardTitle>
-                            <CardDescription>
-                                Data pribadi siswa untuk sistem
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="space-y-2">
-                                    <Label htmlFor="nama_lengkap">
-                                        Nama Lengkap <span className="text-red-500">*</span>
-                                    </Label>
-                                    <Input
-                                        id="nama_lengkap"
-                                        type="text"
-                                        value={formData.nama_lengkap}
-                                        onChange={(e) => handleInputChange('nama_lengkap', e.target.value)}
-                                        placeholder="Masukkan nama lengkap siswa"
-                                        className={errors.nama_lengkap ? 'border-red-500' : ''}
-                                    />
-                                    {errors.nama_lengkap && (
-                                        <p className="text-sm text-red-500 flex items-center">
-                                            <AlertCircle className="h-4 w-4 mr-1" />
-                                            {errors.nama_lengkap}
-                                        </p>
-                                    )}
-                                </div>
-
-                                <div className="space-y-2">
-                                    <Label htmlFor="nisn">
-                                        NISN <span className="text-red-500">*</span>
-                                    </Label>
-                                    <Input
-                                        id="nisn"
-                                        type="text"
-                                        value={formData.nisn}
-                                        onChange={(e) => handleInputChange('nisn', e.target.value.replace(/\D/g, ''))}
-                                        placeholder="10 digit angka"
-                                        maxLength={10}
-                                        className={errors.nisn ? 'border-red-500' : ''}
-                                    />
-                                    {errors.nisn && (
-                                        <p className="text-sm text-red-500 flex items-center">
-                                            <AlertCircle className="h-4 w-4 mr-1" />
-                                            {errors.nisn}
-                                        </p>
-                                    )}
-                                </div>
-
-                                <div className="space-y-2">
-                                    <Label htmlFor="kelas_id" className="flex items-center space-x-1">
-                                        <GraduationCap className="h-4 w-4" />
-                                        <span>Kelas <span className="text-red-500">*</span></span>
-                                    </Label>
-                                    <Popover open={open} onOpenChange={setOpen}>
-                                        <PopoverTrigger asChild>
-                                            <Button
-                                                variant="outline"
-                                                role="combobox"
-                                                aria-expanded={open}
-                                                className={`w-[200px] justify-between ${errors.kelas_id ? 'border-red-500' : ''} ${!formData.kelas_id || formData.kelas_id === 0 ? 'text-muted-foreground' : ''}`}
-                                                disabled={kelasLoading}
-                                            >
-                                                {formData.kelas_id && formData.kelas_id !== 0
-                                                    ? kelasList.find((kelas) => kelas.id === formData.kelas_id)?.nama
-                                                    : kelasLoading
-                                                        ? "Memuat kelas..."
-                                                        : "Pilih kelas..."}
-                                                <GraduationCap className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                                            </Button>
-                                        </PopoverTrigger>
-                                        <PopoverContent className="w-[200px] p-0">
-                                            <Command>
-                                                <CommandInput placeholder="Cari kelas..." />
-                                                <CommandList>
-                                                    <CommandEmpty>Kelas tidak ditemukan.</CommandEmpty>
-                                                    <CommandGroup>
-                                                        {kelasList.map((kelas) => (
-                                                            <CommandItem
-                                                                key={kelas.id}
-                                                                value={kelas.nama}
-                                                                onSelect={() => {
-                                                                    handleInputChange('kelas_id', kelas.id)
-                                                                    setOpen(false)
-                                                                }}
-                                                            >
-                                                                <Check className={`mr-2 h-4 w-4 ${formData.kelas_id === kelas.id ? 'opacity-100' : 'opacity-0'}`} />
-                                                                <GraduationCap className="mr-2 h-4 w-4" />
-                                                                {kelas.nama}
-                                                            </CommandItem>
-                                                        ))}
-                                                    </CommandGroup>
-                                                </CommandList>
-                                            </Command>
-                                        </PopoverContent>
-                                    </Popover>
-                                    {errors.kelas_id && (
-                                        <p className="text-sm text-red-500 flex items-center">
-                                            <AlertCircle className="h-4 w-4 mr-1" />
-                                            {errors.kelas_id}
-                                        </p>
-                                    )}
-                                </div>
-
-                                <div className="space-y-2">
-                                    <Label htmlFor="tanggal_lahir" className="flex items-center space-x-1">
-                                        <Calendar className="h-4 w-4" />
-                                        <span>Tanggal Lahir <span className="text-red-500">*</span></span>
-                                    </Label>
-                                    <Input
-                                        id="tanggal_lahir"
-                                        type="date"
-                                        value={formData.tanggal_lahir}
-                                        onChange={(e) => handleInputChange('tanggal_lahir', e.target.value)}
-                                        className={errors.tanggal_lahir ? 'border-red-500' : ''}
-                                    />
-                                    {errors.tanggal_lahir && (
-                                        <p className="text-sm text-red-500 flex items-center">
-                                            <AlertCircle className="h-4 w-4 mr-1" />
-                                            {errors.tanggal_lahir}
-                                        </p>
-                                    )}
-                                </div>
-
-                                <div className="space-y-2">
-                                    <Label htmlFor="no_telp" className="flex items-center space-x-1">
-                                        <Phone className="h-4 w-4" />
-                                        <span>No. Telepon</span>
-                                    </Label>
-                                    <Input
-                                        id="no_telp"
-                                        type="tel"
-                                        value={formData.no_telp}
-                                        onChange={(e) => handleInputChange('no_telp', e.target.value)}
-                                        placeholder="e.g., 081234567890"
-                                        className={errors.no_telp ? 'border-red-500' : ''}
-                                    />
-                                    {errors.no_telp && (
-                                        <p className="text-sm text-red-500 flex items-center">
-                                            <AlertCircle className="h-4 w-4 mr-1" />
-                                            {errors.no_telp}
-                                        </p>
-                                    )}
-                                </div>
-                            </div>
-
+            <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Basic Information */}
+                <Card>
+                    <CardHeader>
+                        <CardTitle className="flex items-center space-x-2">
+                            <User className="h-5 w-5" />
+                            <span>Informasi Pribadi</span>
+                        </CardTitle>
+                        <CardDescription>
+                            Data pribadi siswa untuk sistem
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
-                                <Label htmlFor="alamat" className="flex items-center space-x-1">
-                                    <MapPin className="h-4 w-4" />
-                                    <span>Alamat <span className="text-red-500">*</span></span>
+                                <Label htmlFor="nama_lengkap">
+                                    Nama Lengkap <span className="text-red-500">*</span>
                                 </Label>
-                                <Textarea
-                                    id="alamat"
-                                    value={formData.alamat}
-                                    onChange={(e) => handleInputChange('alamat', e.target.value)}
-                                    placeholder="Masukkan alamat lengkap siswa"
-                                    rows={3}
-                                    className={errors.alamat ? 'border-red-500' : ''}
+                                <Input
+                                    id="nama_lengkap"
+                                    type="text"
+                                    value={formData.nama_lengkap}
+                                    onChange={(e) => handleInputChange('nama_lengkap', e.target.value)}
+                                    placeholder="Masukkan nama lengkap siswa"
+                                    className={errors.nama_lengkap ? 'border-red-500' : ''}
                                 />
-                                {errors.alamat && (
+                                {errors.nama_lengkap && (
                                     <p className="text-sm text-red-500 flex items-center">
                                         <AlertCircle className="h-4 w-4 mr-1" />
-                                        {errors.alamat}
+                                        {errors.nama_lengkap}
                                     </p>
                                 )}
                             </div>
-                        </CardContent>
-                    </Card>
 
-                    {/* Submit Buttons */}
-                    <div className="flex justify-end">
-                        <div className="flex space-x-2">
-                            <Button
-                                type="button"
-                                variant="outline"
-                                onClick={handleReset}
-                                disabled={loading}
-                                className="mr-2"
-                            >
-                                Reset Form
-                            </Button>
+                            <div className="space-y-2">
+                                <Label htmlFor="nisn">
+                                    NISN <span className="text-red-500">*</span>
+                                </Label>
+                                <Input
+                                    id="nisn"
+                                    type="text"
+                                    value={formData.nisn}
+                                    onChange={(e) => handleInputChange('nisn', e.target.value.replace(/\D/g, ''))}
+                                    placeholder="10 digit angka"
+                                    maxLength={10}
+                                    className={errors.nisn ? 'border-red-500' : ''}
+                                />
+                                {errors.nisn && (
+                                    <p className="text-sm text-red-500 flex items-center">
+                                        <AlertCircle className="h-4 w-4 mr-1" />
+                                        {errors.nisn}
+                                    </p>
+                                )}
+                            </div>
+
+                            <div className="space-y-2">
+                                <Label htmlFor="kelas_id" className="flex items-center space-x-1">
+                                    <GraduationCap className="h-4 w-4" />
+                                    <span>Kelas <span className="text-red-500">*</span></span>
+                                </Label>
+                                <Popover open={open} onOpenChange={setOpen}>
+                                    <PopoverTrigger asChild>
+                                        <Button
+                                            variant="outline"
+                                            role="combobox"
+                                            aria-expanded={open}
+                                            className={`w-[200px] justify-between ${errors.kelas_id ? 'border-red-500' : ''} ${!formData.kelas_id || formData.kelas_id === 0 ? 'text-muted-foreground' : ''}`}
+                                            disabled={kelasLoading}
+                                        >
+                                            {formData.kelas_id && formData.kelas_id !== 0
+                                                ? kelasList.find((kelas) => kelas.id === formData.kelas_id)?.nama
+                                                : kelasLoading
+                                                    ? "Memuat kelas..."
+                                                    : "Pilih kelas..."}
+                                            <GraduationCap className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                                        </Button>
+                                    </PopoverTrigger>
+                                    <PopoverContent className="w-[200px] p-0">
+                                        <Command>
+                                            <CommandInput placeholder="Cari kelas..." />
+                                            <CommandList>
+                                                <CommandEmpty>Kelas tidak ditemukan.</CommandEmpty>
+                                                <CommandGroup>
+                                                    {kelasList.map((kelas) => (
+                                                        <CommandItem
+                                                            key={kelas.id}
+                                                            value={kelas.nama}
+                                                            onSelect={() => {
+                                                                handleInputChange('kelas_id', kelas.id)
+                                                                setOpen(false)
+                                                            }}
+                                                        >
+                                                            <Check className={`mr-2 h-4 w-4 ${formData.kelas_id === kelas.id ? 'opacity-100' : 'opacity-0'}`} />
+                                                            <GraduationCap className="mr-2 h-4 w-4" />
+                                                            {kelas.nama}
+                                                        </CommandItem>
+                                                    ))}
+                                                </CommandGroup>
+                                            </CommandList>
+                                        </Command>
+                                    </PopoverContent>
+                                </Popover>
+                                {errors.kelas_id && (
+                                    <p className="text-sm text-red-500 flex items-center">
+                                        <AlertCircle className="h-4 w-4 mr-1" />
+                                        {errors.kelas_id}
+                                    </p>
+                                )}
+                            </div>
+
+                            <div className="space-y-2">
+                                <Label htmlFor="tanggal_lahir" className="flex items-center space-x-1">
+                                    <Calendar className="h-4 w-4" />
+                                    <span>Tanggal Lahir <span className="text-red-500">*</span></span>
+                                </Label>
+                                <Input
+                                    id="tanggal_lahir"
+                                    type="date"
+                                    value={formData.tanggal_lahir}
+                                    onChange={(e) => handleInputChange('tanggal_lahir', e.target.value)}
+                                    className={errors.tanggal_lahir ? 'border-red-500' : ''}
+                                />
+                                {errors.tanggal_lahir && (
+                                    <p className="text-sm text-red-500 flex items-center">
+                                        <AlertCircle className="h-4 w-4 mr-1" />
+                                        {errors.tanggal_lahir}
+                                    </p>
+                                )}
+                            </div>
+
+                            <div className="space-y-2">
+                                <Label htmlFor="no_telp" className="flex items-center space-x-1">
+                                    <Phone className="h-4 w-4" />
+                                    <span>No. Telepon</span>
+                                </Label>
+                                <Input
+                                    id="no_telp"
+                                    type="tel"
+                                    value={formData.no_telp}
+                                    onChange={(e) => handleInputChange('no_telp', e.target.value)}
+                                    placeholder="e.g., 081234567890"
+                                    className={errors.no_telp ? 'border-red-500' : ''}
+                                />
+                                {errors.no_telp && (
+                                    <p className="text-sm text-red-500 flex items-center">
+                                        <AlertCircle className="h-4 w-4 mr-1" />
+                                        {errors.no_telp}
+                                    </p>
+                                )}
+                            </div>
                         </div>
 
-                        <Button
-                            type="submit"
-                            disabled={loading}
-                            className="flex items-center space-x-2 min-w-[150px]"
-                        >
-                            {loading ? (
-                                <>
-                                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                                    <span>Menyimpan...</span>
-                                </>
-                            ) : (
-                                <>
-                                    <Save className="h-4 w-4" />
-                                    <span>Simpan Data Siswa</span>
-                                </>
+                        <div className="space-y-2">
+                            <Label htmlFor="alamat" className="flex items-center space-x-1">
+                                <MapPin className="h-4 w-4" />
+                                <span>Alamat <span className="text-red-500">*</span></span>
+                            </Label>
+                            <Textarea
+                                id="alamat"
+                                value={formData.alamat}
+                                onChange={(e) => handleInputChange('alamat', e.target.value)}
+                                placeholder="Masukkan alamat lengkap siswa"
+                                rows={3}
+                                className={errors.alamat ? 'border-red-500' : ''}
+                            />
+                            {errors.alamat && (
+                                <p className="text-sm text-red-500 flex items-center">
+                                    <AlertCircle className="h-4 w-4 mr-1" />
+                                    {errors.alamat}
+                                </p>
                             )}
+                        </div>
+                    </CardContent>
+                </Card>
+
+                {/* Submit Buttons */}
+                <div className="flex justify-end">
+                    <div className="flex space-x-2">
+                        <Button
+                            type="button"
+                            variant="outline"
+                            onClick={handleReset}
+                            disabled={loading}
+                            className="mr-2"
+                        >
+                            Atur Ulang Formulir
                         </Button>
                     </div>
-                </form>
-            </div>
+
+                    <Button
+                        type="submit"
+                        disabled={loading}
+                        className="flex items-center space-x-2 min-w-[150px]"
+                    >
+                        {loading ? (
+                            <>
+                                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                                <span>Menyimpan...</span>
+                            </>
+                        ) : (
+                            <>
+                                <Save className="h-4 w-4" />
+                                <span>Simpan Data Siswa</span>
+                            </>
+                        )}
+                    </Button>
+                </div>
+            </form>
+        </div>
     )
 }

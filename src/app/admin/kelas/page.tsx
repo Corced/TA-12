@@ -125,7 +125,7 @@ export default function KelasManagement() {
   // Helper function to get jurusan name by id
   const getJurusanName = (jurusanId: number) => {
     const jurusanItem = jurusan.find(j => j.id === jurusanId)
-    const result = jurusanItem ? jurusanItem.nama : `Jurusan ID: ${jurusanId}`
+    const result = jurusanItem ? jurusanItem.nama : `Kosentrasi Keahlian ID: ${jurusanId}`
     return result
   }
 
@@ -173,10 +173,10 @@ export default function KelasManagement() {
       <div className="flex items-center justify-center h-64">
         <div className="text-center">
           <div className="text-red-600 text-6xl mb-4">⚠️</div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-2">Error Memuat Data</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-2">Gagal Memuat Data</h2>
           <p className="text-gray-600 mb-4">{error}</p>
           <Button onClick={() => loadKelas(searchTerm)}>
-            Try Again
+            Coba Lagi
           </Button>
         </div>
       </div>

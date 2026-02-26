@@ -31,9 +31,9 @@ interface AdminLayoutProps {
 
 const navigation = [
   { name: 'Beranda', href: '/admin', icon: LayoutDashboard },
-  { name: 'Guru', href: '/admin/guru', icon: GraduationCap },
   { name: 'Siswa', href: '/admin/siswa', icon: Users },
-  { name: 'Jurusan', href: '/admin/jurusan', icon: BookOpen },
+  { name: 'Guru', href: '/admin/guru', icon: GraduationCap },
+  { name: 'Kosentrasi Keahlian', href: '/admin/jurusan', icon: BookOpen },
   { name: 'Kelas', href: '/admin/kelas', icon: School },
   { name: 'Industri', href: '/admin/industri', icon: Building2 },
   { name: 'Tahun Ajaran', href: '/admin/tahun-ajaran', icon: Calendar },
@@ -161,7 +161,7 @@ export function AdminLayout({ children, user }: AdminLayoutProps) {
           {/* Mobile navigation */}
           <nav className="flex-1 space-y-1 px-3 py-4">
             {navigation.map((item) => {
-              const Icon = item.icon
+              const Icon = item.icon!
               const active = isActive(item.href)
               return (
                 <Link key={item.name} href={item.href}>
@@ -221,7 +221,7 @@ export function AdminLayout({ children, user }: AdminLayoutProps) {
           {/* Desktop navigation */}
           <nav className="flex-1 space-y-1 px-3 py-4">
             {navigation.map((item) => {
-              const Icon = item.icon
+              const Icon = item.icon!
               const active = isActive(item.href)
               return (
                 <Link key={item.name} href={item.href} >

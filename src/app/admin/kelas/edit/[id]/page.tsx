@@ -64,11 +64,11 @@ export default function EditKelasPage() {
                 if (response && response.data && response.data.data) {
                     setJurusanOptions(response.data.data)
                 } else {
-                    toast.error('Gagal memuat data jurusan')
+                    toast.error('Gagal memuat data kosentrasi keahlian')
                 }
             } catch (error) {
                 console.error('Load jurusan error:', error)
-                toast.error('Gagal memuat data jurusan')
+                toast.error('Gagal memuat data kosentrasi keahlian')
             } finally {
                 setLoadingJurusan(false)
             }
@@ -157,7 +157,7 @@ export default function EditKelasPage() {
         }
 
         if (!formData.jurusan_id || formData.jurusan_id === 0) {
-            newErrors.jurusan_id = 'Jurusan wajib dipilih'
+            newErrors.jurusan_id = 'Kosentrasi keahlian wajib dipilih'
         }
 
         setErrors(newErrors)
@@ -281,12 +281,12 @@ export default function EditKelasPage() {
 
                             <div className="space-y-2">
                                 <Label htmlFor="jurusan_id">
-                                    Jurusan <span className="text-red-500">*</span>
+                                    Kosentrasi Keahlian <span className="text-red-500">*</span>
                                 </Label>
                                 {loadingJurusan ? (
                                     <div className="flex items-center justify-center h-10 border rounded-md bg-gray-50">
                                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-gray-400"></div>
-                                        <span className="ml-2 text-sm text-gray-500">Memuat Konsentrasi Keahlian...</span>
+                                        <span className="ml-2 text-sm text-gray-500">Memuat kosentrasi keahlian...</span>
                                     </div>
                                 ) : (
                                     <Popover open={open} onOpenChange={setOpen}>
@@ -300,15 +300,15 @@ export default function EditKelasPage() {
                                             >
                                                 {formData.jurusan_id && formData.jurusan_id !== 0
                                                     ? jurusanOptions.find((jurusan) => jurusan.id === formData.jurusan_id)?.nama
-                                                    : "Pilih jurusan..."}
+                                                    : "Pilih kosentrasi keahlian..."}
                                                 <School className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                                             </Button>
                                         </PopoverTrigger>
                                         <PopoverContent className="w-full p-0">
                                             <Command>
-                                                <CommandInput placeholder="Cari Konsentrasi Keahlian..." />
+                                                <CommandInput placeholder="Cari kosentrasi keahlian..." />
                                                 <CommandList>
-                                                    <CommandEmpty>Konsentrasi Keahlian tidak ditemukan.</CommandEmpty>
+                                                    <CommandEmpty>Kosentrasi keahlian tidak ditemukan.</CommandEmpty>
                                                     <CommandGroup>
                                                         {jurusanOptions.map((jurusan) => (
                                                             <CommandItem

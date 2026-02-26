@@ -104,128 +104,19 @@ export default function MonitorAbsensiPage() {
                 <p className="text-muted-foreground">Pantau kehadiran dan perizinan siswa bimbingan Anda.</p>
             </div>
 
-            <Tabs defaultValue="harian" className="w-full">
+            {/* <Tabs defaultValue="harian" className="w-full">
                 <TabsList>
-                    <TabsTrigger value="harian">Daftar Perizinan</TabsTrigger>
-                    {/* <TabsTrigger value="rekap">Rekap Semester (6 Bulan)</TabsTrigger> */}
+                    <TabsTrigger value="harian" className="border-none">Daftar Perizinan</TabsTrigger>
+                    <TabsTrigger value="rekap">Rekap Semester (6 Bulan)</TabsTrigger>
                 </TabsList>
 
-                {/* TAB HARIAN */}
                 <TabsContent value="harian" className="mt-4">
-                    <Card>
-                        <CardHeader>
-                            <CardTitle className="text-lg">Riwayat Perizinan Siswa</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="flex gap-4 mb-4">
-                                <div className="relative flex-1">
-                                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                                    <Input
-                                        placeholder="Cari siswa..."
-                                        className="pl-8"
-                                        value={searchTerm}
-                                        onChange={(e) => setSearchTerm(e.target.value)}
-                                    />
-                                </div>
-                                <Select value={statusFilter} onValueChange={setStatusFilter}>
-                                    <SelectTrigger className="w-[180px]">
-                                        <SelectValue placeholder="Jenis Izin" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectItem value="all">Semua Jenis</SelectItem>
-                                        <SelectItem value="Sakit">Sakit</SelectItem>
-                                        <SelectItem value="Izin">Izin</SelectItem>
-                                    </SelectContent>
-                                </Select>
-                            </div>
-
-                            <div className="rounded-md border">
-                                <Table>
-                                    <TableHeader>
-                                        <TableRow>
-                                            <TableHead>Nama Siswa</TableHead>
-                                            <TableHead>Industri</TableHead>
-                                            <TableHead>Jenis</TableHead>
-                                            <TableHead>Tanggal</TableHead>
-                                            <TableHead>Status</TableHead>
-                                            <TableHead>Bukti</TableHead>
-                                            {/* <TableHead>Detail</TableHead> */}
-                                        </TableRow>
-                                    </TableHeader>
-                                    <TableBody>
-                                        {loading ? (
-                                            <TableRow>
-                                                <TableCell colSpan={6} className="text-center h-24">
-                                                    Memuat data...
-                                                </TableCell>
-                                            </TableRow>
-                                        ) : filteredList.length === 0 ? (
-                                            <TableRow>
-                                                <TableCell colSpan={6} className="text-center h-24">
-                                                    Tidak ada data perizinan.
-                                                </TableCell>
-                                            </TableRow>
-                                        ) : (
-                                            filteredList.map((item) => (
-                                                <TableRow key={item.id}>
-                                                    <TableCell className="font-medium">
-                                                        {item.siswa?.nama || `Siswa #${item.siswa_id}`}
-                                                        <div className="text-xs text-muted-foreground">{item.siswa?.nisn || "-"}</div>
-                                                    </TableCell>
-                                                    <TableCell>{item.siswa?.industri || "-"}</TableCell>
-                                                    <TableCell>
-                                                        <Badge variant={getJenisBadgeVariant(item.jenis)} className={
-                                                            item.jenis === 'Sakit' ? 'bg-yellow-100 text-yellow-800 border-none' : ''
-                                                        }>
-                                                            {item.jenis}
-                                                        </Badge>
-                                                    </TableCell>
-                                                    <TableCell>
-                                                        {new Date(item.tanggal).toLocaleDateString('id-ID', {
-                                                            day: 'numeric',
-                                                            month: 'long',
-                                                            year: 'numeric'
-                                                        })}
-                                                    </TableCell>
-                                                    <TableCell>
-                                                        <Badge variant={getStatusBadgeVariant(item.status)}>
-                                                            {item.status}
-                                                        </Badge>
-                                                    </TableCell>
-                                                    <TableCell>
-                                                        {item.bukti_foto_urls && item.bukti_foto_urls.length > 0 && (
-                                                            <div className="flex gap-1 flex-wrap">
-                                                                {item.bukti_foto_urls.map((url, idx) => (
-                                                                    <Button
-                                                                        key={idx}
-                                                                        variant="ghost"
-                                                                        size="sm"
-                                                                        className="text-blue-600 hover:text-blue-800 h-8 px-2"
-                                                                        onClick={() => window.open(url, '_blank')}
-                                                                    >
-                                                                        <FileText className="w-4 h-4 mr-1" /> Bukti {idx > 0 ? idx + 1 : ''}
-                                                                    </Button>
-                                                                ))}
-                                                            </div>
-                                                        )}
-                                                    </TableCell>
-                                                    {/* <TableCell>
-                                                        <Button variant="ghost" size="icon" onClick={() => toast.info("Fitur Detail Siswa akan datang")}>
-                                                            <Eye className="w-4 h-4" />
-                                                        </Button>
-                                                    </TableCell> */}
-                                                </TableRow>
-                                            ))
-                                        )}
-                                    </TableBody>
-                                </Table>
-                            </div>
-                        </CardContent>
-                    </Card>
+                    
                 </TabsContent>
 
-                {/* TAB REKAP - Disembunyikan dulu karena belum ada API */}
-                {/* <TabsContent value="rekap" className="mt-4">
+                
+
+                <TabsContent value="rekap" className="mt-4">
                     <Card>
                         <CardHeader className="flex flex-row items-center justify-between">
                             <CardTitle className="text-lg">Rekapitulasi Absensi Semester</CardTitle>
@@ -239,8 +130,118 @@ export default function MonitorAbsensiPage() {
                             </div>
                         </CardContent>
                     </Card>
-                </TabsContent> */}
-            </Tabs>
+                </TabsContent>
+            </Tabs> */}
+            <Card>
+                <CardHeader>
+                    <CardTitle className="text-lg">Riwayat Perizinan Siswa</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <div className="flex gap-4 mb-4">
+                        <div className="relative flex-1">
+                            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                            <Input
+                                placeholder="Cari siswa..."
+                                className="pl-8"
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                            />
+                        </div>
+                        <Select value={statusFilter} onValueChange={setStatusFilter}>
+                            <SelectTrigger className="w-[180px]">
+                                <SelectValue placeholder="Jenis Izin" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="all">Semua Jenis</SelectItem>
+                                <SelectItem value="Sakit">Sakit</SelectItem>
+                                <SelectItem value="Izin">Izin</SelectItem>
+                            </SelectContent>
+                        </Select>
+                    </div>
+
+                    <div className="rounded-md border">
+                        <Table>
+                            <TableHeader>
+                                <TableRow>
+                                    <TableHead>Nama Siswa</TableHead>
+                                    <TableHead>Industri</TableHead>
+                                    <TableHead>Jenis</TableHead>
+                                    <TableHead>Tanggal</TableHead>
+                                    <TableHead>Status</TableHead>
+                                    <TableHead>Bukti</TableHead>
+                                    {/* <TableHead>Detail</TableHead> */}
+                                </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                                {loading ? (
+                                    <TableRow>
+                                        <TableCell colSpan={6} className="text-center h-24">
+                                            Memuat data...
+                                        </TableCell>
+                                    </TableRow>
+                                ) : filteredList.length === 0 ? (
+                                    <TableRow>
+                                        <TableCell colSpan={6} className="text-center h-24">
+                                            Tidak ada data perizinan.
+                                        </TableCell>
+                                    </TableRow>
+                                ) : (
+                                    filteredList.map((item) => (
+                                        <TableRow key={item.id}>
+                                            <TableCell className="font-medium">
+                                                {item.siswa?.nama || `Siswa #${item.siswa_id}`}
+                                                <div className="text-xs text-muted-foreground">{item.siswa?.nisn || "-"}</div>
+                                            </TableCell>
+                                            <TableCell>{item.siswa?.industri || "-"}</TableCell>
+                                            <TableCell>
+                                                <Badge variant={getJenisBadgeVariant(item.jenis)} className={
+                                                    item.jenis === 'Sakit' ? 'bg-yellow-100 text-yellow-800 border-none' : ''
+                                                }>
+                                                    {item.jenis}
+                                                </Badge>
+                                            </TableCell>
+                                            <TableCell>
+                                                {new Date(item.tanggal).toLocaleDateString('id-ID', {
+                                                    day: 'numeric',
+                                                    month: 'long',
+                                                    year: 'numeric'
+                                                })}
+                                            </TableCell>
+                                            <TableCell>
+                                                <Badge variant={getStatusBadgeVariant(item.status)}>
+                                                    {item.status}
+                                                </Badge>
+                                            </TableCell>
+                                            <TableCell>
+                                                {item.bukti_foto_urls && item.bukti_foto_urls.length > 0 && (
+                                                    <div className="flex gap-1 flex-wrap">
+                                                        {item.bukti_foto_urls.map((url, idx) => (
+                                                            <Button
+                                                                key={idx}
+                                                                variant="ghost"
+                                                                size="sm"
+                                                                className="text-blue-600 hover:text-blue-800 h-8 px-2"
+                                                                onClick={() => window.open(url, '_blank')}
+                                                            >
+                                                                <FileText className="w-4 h-4 mr-1" /> Bukti {idx > 0 ? idx + 1 : ''}
+                                                            </Button>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                            </TableCell>
+                                            {/* <TableCell>
+                                                        <Button variant="ghost" size="icon" onClick={() => toast.info("Fitur Detail Siswa akan datang")}>
+                                                            <Eye className="w-4 h-4" />
+                                                        </Button>
+                                                    </TableCell> */}
+                                        </TableRow>
+                                    ))
+                                )}
+                            </TableBody>
+                        </Table>
+                    </div>
+                </CardContent>
+            </Card>
         </div>
     )
 }

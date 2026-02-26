@@ -71,7 +71,7 @@ export default function PengaturanPage() {
                 <Button asChild>
                     <Link href="/admin/pengaturan/edit">
                         <Pencil className="mr-2 h-4 w-4" />
-                        Sunting Profil
+                        Ubah Profil
                     </Link>
                 </Button>
             </div>
