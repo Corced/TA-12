@@ -176,7 +176,7 @@ export default function TempatMagangPage() {
                                 <TableHead className="w-[50px] text-center">No</TableHead>
                                 <TableHead>Nama Industri</TableHead>
                                 <TableHead className="text-center">Kuota</TableHead>
-                                <TableHead className="text-center">Pending</TableHead>
+                                <TableHead className="text-center">Tertunda</TableHead>
                                 <TableHead className="text-center">Disetujui</TableHead>
                                 <TableHead className="text-center">Aktif</TableHead>
                                 <TableHead className="text-center">Sisa Slot</TableHead>
