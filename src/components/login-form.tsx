@@ -52,7 +52,7 @@ export function LoginForm({
         setTokens(response.data.access_token, response.data.refresh_token)
 
         toast.success("Masuk berhasil!", {
-          description: "Selamat datang di Beranda admin"
+          description: "Selamat datang di Beranda Admin"
         })
 
         router.push('/admin')
