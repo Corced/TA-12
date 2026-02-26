@@ -445,7 +445,7 @@ export default function EditIndustriPage() {
                     <CardHeader>
                         <CardTitle className="flex items-center space-x-2">
                             <User className="h-5 w-5" />
-                            <span>Informasi Person in Charge (PIC)</span>
+                            <span>Informasi Penanggung Jawab</span>
                         </CardTitle>
                         <CardDescription>
                             Data kontak person yang bertanggung jawab
@@ -454,7 +454,7 @@ export default function EditIndustriPage() {
                     <CardContent className="space-y-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
-                                <Label htmlFor="pic">Nama PIC</Label>
+                                <Label htmlFor="pic">Nama</Label>
                                 <Input
                                     id="pic"
                                     type="text"
@@ -474,7 +474,7 @@ export default function EditIndustriPage() {
                             <div className="space-y-2">
                                 <Label htmlFor="pic_telp" className="flex items-center space-x-1">
                                     <Phone className="h-4 w-4" />
-                                    <span>No. Telepon PIC</span>
+                                    <span>No. Telepon</span>
                                 </Label>
                                 <Input
                                     id="pic_telp"
