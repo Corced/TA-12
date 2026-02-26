@@ -125,7 +125,7 @@ export default function KelasManagement() {
   // Helper function to get jurusan name by id
   const getJurusanName = (jurusanId: number) => {
     const jurusanItem = jurusan.find(j => j.id === jurusanId)
-    const result = jurusanItem ? jurusanItem.nama : `Jurusan ID: ${jurusanId}`
+    const result = jurusanItem ? jurusanItem.nama : `Kosentrasi Keahlian ID: ${jurusanId}`
     return result
   }
 

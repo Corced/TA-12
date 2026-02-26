@@ -503,16 +503,16 @@ export function DataTable<T = Record<string, unknown>>({
                       className="w-[200px] justify-between"
                     >
                       {
-                        selectedJurusan ? filterData.jurusan?.find((jurusan) => jurusan.id === selectedJurusan)?.nama : 'Pilih Jurusan'
+                        selectedJurusan ? filterData.jurusan?.find((jurusan) => jurusan.id === selectedJurusan)?.nama : 'Pilih Kosentrasi Keahlian'
                       }
                       <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-[200px] p-0" >
                     <Command>
-                      <CommandInput placeholder="Search jurusan..." className="h-9" />
+                      <CommandInput placeholder="Search kosentrasi keahlian..." className="h-9" />
                       <CommandList>
-                        <CommandEmpty>No jurusan found.</CommandEmpty>
+                        <CommandEmpty>Kosentrasi keahlian tidak ditemukan.</CommandEmpty>
                         <CommandGroup>
                           {filterData.jurusan?.map((jurusan) => (
                             <CommandItem key={jurusan.id} value={`${jurusan.kode} - ${jurusan.nama}`} onSelect={() => {

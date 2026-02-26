@@ -276,25 +276,25 @@ export default function ViewIndustriPage() {
                     <CardHeader>
                         <CardTitle className="flex items-center space-x-2">
                             <GraduationCap className="h-5 w-5" />
-                            <span>Informasi Jurusan Terkait</span>
+                            <span>Informasi Kosentrasi Keahlian Terkait</span>
                         </CardTitle>
                         <CardDescription>
-                            Program studi yang terkait dengan industri ini
+                            Detail kosentrasi keahlian yang terhubung dengan industri ini
                         </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
-                                <Label className="text-sm font-medium text-gray-700">Kode Jurusan</Label>
+                                <Label className="text-sm font-medium text-gray-700">Kode Kosentrasi Keahlian</Label>
                                 <Input
                                     value={jurusanData.kode}
                                     readOnly
-                                    className="bg-gray-50 cursor-default font-mono text-lg"
+                                    className="bg-gray-50 cursor-default font-mono"
                                 />
                             </div>
 
                             <div className="space-y-2">
-                                <Label className="text-sm font-medium text-gray-700">Nama Jurusan</Label>
+                                <Label className="text-sm font-medium text-gray-700">Nama Kosentrasi Keahlian</Label>
                                 <Input
                                     value={jurusanData.nama}
                                     readOnly

@@ -135,9 +135,9 @@ function AdminDashboard() {
       {/* Additional Statistics */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <StatisticsCard
-          title="Jurusan"
+          title="Kosentrasi Keahlian"
           value={stats?.total_jurusan}
-          description="Program keahlian"
+          description="Konsentrasi keahlian"
           icon={BookOpen}
           variant="default"
         />
