@@ -248,7 +248,7 @@ export default function EditIndustriPage() {
                         <span>Kembali</span>
                     </Button>
                     <div>
-                        <h1 className="text-3xl font-bold text-gray-900">Edit Data Industri</h1>
+                        <h1 className="text-3xl font-bold text-gray-900">Ubah Data Industri</h1>
                         <p className="text-gray-600">Perbarui informasi mitra industri dalam sistem</p>
                     </div>
                 </div>

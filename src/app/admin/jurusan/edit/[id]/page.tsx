@@ -228,7 +228,7 @@ export default function EditJurusanPage() {
                         <span>Kembali</span>
                     </Button>
                     <div>
-                        <h1 className="text-3xl font-bold text-gray-900">Edit Data Kosentrasi Keahlian</h1>
+                        <h1 className="text-3xl font-bold text-gray-900">Ubah Data Kosentrasi Keahlian</h1>
                         <p className="text-gray-600">Perbarui informasi program studi dalam sistem</p>
                     </div>
                 </div>
