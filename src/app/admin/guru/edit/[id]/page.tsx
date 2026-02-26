@@ -74,7 +74,7 @@ export default function EditGuruPage() {
                     router.push('/admin/guru')
                 }
             } catch (error) {
-                console.error('Load guru error:', error)
+                console.error('Gagal memuat data guru:', error)
                 toast.error('Gagal memuat data guru')
                 router.push('/admin/guru')
             } finally {
@@ -220,7 +220,7 @@ export default function EditGuruPage() {
                             <span>Kembali</span>
                         </Button>
                         <div>
-                            <h1 className="text-3xl font-bold text-gray-900">Edit Data Guru</h1>
+                            <h1 className="text-3xl font-bold text-gray-900">Sunting Data Guru</h1>
                             <p className="text-gray-600">Perbarui data guru dalam sistem</p>
                         </div>
                     </div>
