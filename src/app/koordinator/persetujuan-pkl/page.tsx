@@ -144,7 +144,7 @@ export default function PersetujuanPkl() {
                                         ) : (
                                             <Printer className="h-4 w-4" />
                                         )}
-                                        Generate Surat
+                                        Menghasilkan Surat
                                     </Button>
                                 </CardHeader>
                                 <CardContent>
