@@ -118,7 +118,7 @@ export default function DetailIndustriPage() {
                             </div>
                             <div>
                                 <Label className={labelStyle}>
-                                    <GraduationCap className={iconStyle} /> Jurusan
+                                    <GraduationCap className={iconStyle} /> Kosentrasi Keahlian
                                 </Label>
                                 <Input readOnly value={`Jurusan yang diterima (ID: ${industri.jurusan_id})`} className={inputStyle} />
                             </div>
@@ -195,76 +195,9 @@ export default function DetailIndustriPage() {
                         </Button>
                         <Link href={`/koordinator/industri/${id}/edit`}>
                             <Button className="bg-[#641E20] hover:bg-[#4a1216] text-white px-6">
-                                Edit
+                                Ubah
                             </Button>
                         </Link>
-                    </div>
-                </CardContent>
-            </Card>
-
-            {/* Card 2: Daftar Peserta Didik */}
-            <Card className="border border-gray-200 shadow-sm rounded-xl bg-white">
-                <CardContent className="p-6">
-                    <div className="flex justify-between items-center mb-6">
-                        <div className="flex items-center gap-2 text-blue-500 font-semibold">
-                            <User className="w-5 h-5" />
-                            <h2 className="text-lg text-gray-900 font-bold">Daftar Peserta Didik</h2>
-                        </div>
-                        <Button className="bg-blue-500 hover:bg-blue-600 text-white text-xs h-8">
-                            <Plus className="w-3 h-3 mr-1" /> Tambah Siswa
-                        </Button>
-                    </div>
-
-                    <div className="overflow-x-auto">
-                        <table className="w-full">
-                            <thead>
-                                <tr className="border-b border-gray-100">
-                                    <th className="text-left py-3 px-4 text-xs font-medium text-gray-500 uppercase tracking-wider">No</th>
-                                    <th className="text-left py-3 px-4 text-xs font-medium text-gray-500 uppercase tracking-wider">Nama Siswa</th>
-                                    <th className="text-center py-3 px-4 text-xs font-medium text-gray-500 uppercase tracking-wider">Kelas</th>
-                                    <th className="text-left py-3 px-4 text-xs font-medium text-gray-500 uppercase tracking-wider">Jurusan</th>
-                                    <th className="text-right py-3 px-4 text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-gray-50">
-                                {dummyStudents.map((student, index) => (
-                                    <tr key={student.id} className="hover:bg-gray-50/50 transition-colors">
-                                        <td className="py-4 px-4 text-sm text-gray-500">{index + 1}</td>
-                                        <td className="py-4 px-4">
-                                            <div className="flex items-center gap-3">
-                                                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-bold ${student.color || 'bg-blue-100 text-blue-600'}`}>
-                                                    {student.avatar}
-                                                </div>
-                                                <span className="font-semibold text-gray-700">{student.name}</span>
-                                            </div>
-                                        </td>
-                                        <td className="py-4 px-4 text-center text-sm text-gray-500">{student.class}</td>
-                                        <td className="py-4 px-4 text-sm text-gray-500">{student.major}</td>
-                                        <td className="py-4 px-4 text-right">
-                                            <Button variant="ghost" size="sm" className="h-7 text-xs text-blue-500 hover:text-blue-700 hover:bg-blue-50">
-                                                <Info className="w-3 h-3 mr-1" /> Lihat Detail
-                                            </Button>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div className="flex items-center justify-between mt-6 text-xs text-gray-500">
-                        <p>Menampilkan 1-5 dari 5 siswa</p>
-                        <div className="flex gap-1">
-                            <Button variant="outline" size="icon" className="h-7 w-7 border-gray-200">
-                                <ChevronLeft className="h-3 w-3" />
-                            </Button>
-                            <Button className="h-7 w-7 bg-[#641E20] hover:bg-[#4a1216] text-white">1</Button>
-                            <Button variant="outline" size="icon" className="h-7 w-7 border-gray-200">
-                                2
-                            </Button>
-                            <Button variant="outline" size="icon" className="h-7 w-7 border-gray-200">
-                                <ChevronRight className="h-3 w-3" />
-                            </Button>
-                        </div>
                     </div>
                 </CardContent>
             </Card>

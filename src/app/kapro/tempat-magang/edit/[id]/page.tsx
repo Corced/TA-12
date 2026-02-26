@@ -178,9 +178,9 @@ export default function EditIndustriPage() {
                                     name="pic"
                                     render={({ field }) => (
                                         <FormItem>
-                                            <FormLabel className="font-semibold">Kontak Person <span className="text-red-500">*</span></FormLabel>
+                                            <FormLabel className="font-semibold">Penanggung Jawab <span className="text-red-500">*</span></FormLabel>
                                             <FormControl>
-                                                <Input placeholder="Nama kontak person" {...field} />
+                                                <Input placeholder="Nama Penanggung Jawab" {...field} />
                                             </FormControl>
                                             <FormMessage />
                                         </FormItem>
