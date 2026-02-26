@@ -29,7 +29,7 @@ const formSchema = z.object({
     no_telp: z.string().min(1, "Nomor telepon wajib diisi"),
     pic_telp: z.string().min(1, "Nomor telepon penanggung jawab wajib diisi"),
     email: z.string().email("Format email tidak valid").optional().or(z.literal("")),
-    jurusan_id: z.string().min(1, "Jurusan wajib dipilih"),
+    jurusan_id: z.string().min(1, "Konsentrasi Keahlian wajib dipilih"),
 })
 
 export default function TambahIndustriPage() {

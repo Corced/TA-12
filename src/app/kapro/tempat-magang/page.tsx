@@ -242,7 +242,7 @@ export default function TempatMagangPage() {
                                                 size="sm"
                                                 variant="outline"
                                                 className="h-8 w-8 p-0"
-                                                title="Edit Industri"
+                                                title="Sunting Industri"
                                                 onClick={() => {
                                                     router.push(`/kapro/tempat-magang/edit/${item.industri_id}`)
                                                 }}

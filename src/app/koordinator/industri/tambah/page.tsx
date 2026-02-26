@@ -110,7 +110,7 @@ export default function TambahIndustriKoordinatorPage() {
     }
 
     if (loadingJurusans) {
-        return <div className="p-8">Loading...</div>
+        return <div className="p-8">Memuat...</div>
     }
 
     return (

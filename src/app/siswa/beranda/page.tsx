@@ -17,7 +17,7 @@ interface PermohonanCardProps {
 
 function PermohonanCard({ permohonan }: PermohonanCardProps) {
     const router = useRouter()
-    const [namaIndustri, setNamaIndustri] = useState<string>("Loading...");
+    const [namaIndustri, setNamaIndustri] = useState<string>("Memuat...");
 
     useEffect(() => {
         const fetchIndustri = async () => {
@@ -27,7 +27,7 @@ function PermohonanCard({ permohonan }: PermohonanCardProps) {
                     setNamaIndustri(response.data.nama);
                 }
             } catch (error) {
-                console.error("Error fetching industri:", error);
+                console.error("Error Memuat data industri:", error);
                 setNamaIndustri("Industri tidak ditemukan");
             }
         };
@@ -214,7 +214,7 @@ export default function Dashboard() {
                     loadingSiswa ? (
                         <div className="bg-white rounded-2xl p-6 shadow-sm border">
                             <h2 className="text-lg font-semibold mb-4">Profil Peserta didik</h2>
-                            <p className="text-sm text-gray-500 mb-6">Loading...</p>
+                            <p className="text-sm text-gray-500 mb-6">Memuat...</p>
                         </div>
                     ) : siswa && (
                         <div className="bg-white rounded-2xl p-6 shadow-sm border">
@@ -257,7 +257,7 @@ export default function Dashboard() {
                                 <CheckCircle2 className="w-5 h-5 mt-0.5" />
                                 <div>
                                     <p className="font-semibold">Aktif Magang</p>
-                                    <p className="mt-1">Anda saat ini sedang menjalani PKL di <span className="font-bold">Loading...</span></p>
+                                    <p className="mt-1">Anda saat ini sedang menjalani PKL di <span className="font-bold">Memuat...</span></p>
                                 </div>
                             </div>
 

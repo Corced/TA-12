@@ -286,7 +286,7 @@ export default function EditKelasPage() {
                                 {loadingJurusan ? (
                                     <div className="flex items-center justify-center h-10 border rounded-md bg-gray-50">
                                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-gray-400"></div>
-                                        <span className="ml-2 text-sm text-gray-500">Memuat jurusan...</span>
+                                        <span className="ml-2 text-sm text-gray-500">Memuat Konsentrasi Keahlian...</span>
                                     </div>
                                 ) : (
                                     <Popover open={open} onOpenChange={setOpen}>
@@ -306,9 +306,9 @@ export default function EditKelasPage() {
                                         </PopoverTrigger>
                                         <PopoverContent className="w-full p-0">
                                             <Command>
-                                                <CommandInput placeholder="Cari jurusan..." />
+                                                <CommandInput placeholder="Cari Konsentrasi Keahlian..." />
                                                 <CommandList>
-                                                    <CommandEmpty>Jurusan tidak ditemukan.</CommandEmpty>
+                                                    <CommandEmpty>Konsentrasi Keahlian tidak ditemukan.</CommandEmpty>
                                                     <CommandGroup>
                                                         {jurusanOptions.map((jurusan) => (
                                                             <CommandItem

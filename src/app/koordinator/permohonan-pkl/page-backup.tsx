@@ -93,7 +93,7 @@ export default function FormPKL() {
                         />
 
                         <Select
-                            label="Jurusan"
+                            label="Konsentrasi Keahlian"
                             id="jurusan"
                             value={form.jurusan}
                             onChange={handleChange}

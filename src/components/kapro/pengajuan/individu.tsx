@@ -184,7 +184,7 @@ export default function PengajuanIndividu() {
             link.click();
             toast.success("Surat berhasil dihasilkan");
         } catch (error) {
-            console.error("Error downloading surat:", error);
+            console.error("Error Mengunduh surat:", error);
             toast.error("Terjadi kesalahan");
         }
         finally {
@@ -349,7 +349,7 @@ export default function PengajuanIndividu() {
                                                     onClick={() => generateSurat(row.application.id)}
                                                     disabled={loadingSubmit}
                                                 >
-                                                    {loadingSubmit ? "Sedang Memproses..." : "Generate Surat"}
+                                                    {loadingSubmit ? "Sedang Memproses..." : "Menghasilkan Surat"}
                                                 </Button>
                                             )}
                                         </div>

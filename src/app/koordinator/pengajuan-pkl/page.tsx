@@ -337,7 +337,7 @@ export default function PengajuanPKLPage() {
                                     <TableRow>
                                         <TableCell colSpan={6} className="text-center py-10">
                                             <div className="flex justify-center items-center gap-2">
-                                                <Loader2 className="h-4 w-4 animate-spin" /> Loading...
+                                                <Loader2 className="h-4 w-4 animate-spin" /> Memuat...
                                             </div>
                                         </TableCell>
                                     </TableRow>

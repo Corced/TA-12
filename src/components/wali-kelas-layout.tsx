@@ -9,7 +9,7 @@ export default function WaliKelasLayout({ children, pathname }: { children: Reac
     const departmentName = useDataJurusanByKaporg();
 
     if (loading) {
-        return <div className="flex items-center justify-center h-screen">Loading...</div>
+        return <div className="flex items-center justify-center h-screen">Memuat...</div>
     }
 
     // Jika tidak punya akses, useRoleAccess sudah handle redirect

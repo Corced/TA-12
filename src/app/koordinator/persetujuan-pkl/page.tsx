@@ -118,7 +118,7 @@ export default function PersetujuanPkl() {
             {isLoading ? (
                 <div className="flex items-center justify-center py-10">
                     <Loader2 className="h-8 w-8 animate-spin" />
-                    <span className="ml-2">Loading data...</span>
+                    <span className="ml-2">Memuat data...</span>
                 </div>
             ) : Object.keys(groupedData).length === 0 ? (
                 <p className="text-muted-foreground">Tidak ada data persetujuan PKL.</p>
@@ -144,7 +144,7 @@ export default function PersetujuanPkl() {
                                         ) : (
                                             <Printer className="h-4 w-4" />
                                         )}
-                                        Generate Surat
+                                        Menghasilkan Surat
                                     </Button>
                                 </CardHeader>
                                 <CardContent>

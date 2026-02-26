@@ -36,7 +36,7 @@ function AdminDashboard() {
       const response = await axiosInstance.get('/api/admin/dashboard')
       setStats(response.data.data)
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Gagal memuat statistik dashboard')
+      setError(err instanceof Error ? err.message : 'Gagal memuat statistik Beranda')
     } finally {
       setLoading(false)
     }
@@ -60,7 +60,7 @@ function AdminDashboard() {
       <div className="flex items-center justify-center h-64">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-2 text-gray-600">Memuat dashboard...</p>
+          <p className="mt-2 text-gray-600">Memuat Beranda...</p>
         </div>
       </div>
     )
@@ -71,7 +71,7 @@ function AdminDashboard() {
       <div className="flex items-center justify-center h-64">
         <div className="text-center">
           <div className="text-red-600 text-6xl mb-4">⚠️</div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-2">Gagal Memuat Dashboard</h2>
+          <h2 className="text-xl font-semibold text-gray-900 mb-2">Gagal Memuat Beranda</h2>
           <p className="text-gray-600 mb-4">{error}</p>
           <button
             onClick={loadDashboardStats}
@@ -135,7 +135,7 @@ function AdminDashboard() {
       {/* Additional Statistics */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <StatisticsCard
-          title="Jurusan"
+          title="Konsentrasi Keahlian"
           value={stats?.total_jurusan}
           description="Program keahlian"
           icon={BookOpen}

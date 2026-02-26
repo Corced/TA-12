@@ -248,7 +248,7 @@ export default function EditIndustriPage() {
                         <span>Kembali</span>
                     </Button>
                     <div>
-                        <h1 className="text-3xl font-bold text-gray-900">Edit Data Industri</h1>
+                        <h1 className="text-3xl font-bold text-gray-900">Sunting Data Industri</h1>
                         <p className="text-gray-600">Perbarui informasi mitra industri dalam sistem</p>
                     </div>
                 </div>
@@ -312,12 +312,12 @@ export default function EditIndustriPage() {
 
                             <div className="space-y-2">
                                 <Label htmlFor="jurusan_id">
-                                    Jurusan Terkait <span className="text-red-500">*</span>
+                                    Konsentrasi Keahlian Terkait <span className="text-red-500">*</span>
                                 </Label>
                                 {loadingJurusan ? (
                                     <div className="flex items-center justify-center h-10 border rounded-md bg-gray-50">
                                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-gray-400"></div>
-                                        <span className="ml-2 text-sm text-gray-500">Memuat jurusan...</span>
+                                        <span className="ml-2 text-sm text-gray-500">Memuat Konsentrasi Keahlian...</span>
                                     </div>
                                 ) : (
                                     <Popover open={open} onOpenChange={setOpen}>
@@ -331,15 +331,15 @@ export default function EditIndustriPage() {
                                             >
                                                 {formData.jurusan_id && formData.jurusan_id !== 0
                                                     ? jurusanOptions.find((jurusan) => jurusan.id === formData.jurusan_id)?.nama
-                                                    : "Pilih jurusan..."}
+                                                    : "Pilih Konsentrasi Keahlian..."}
                                                 <Building className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                                             </Button>
                                         </PopoverTrigger>
                                         <PopoverContent className="w-full p-0">
                                             <Command>
-                                                <CommandInput placeholder="Cari jurusan..." />
+                                                <CommandInput placeholder="Cari Konsentrasi Keahlian..." />
                                                 <CommandList>
-                                                    <CommandEmpty>Jurusan tidak ditemukan.</CommandEmpty>
+                                                    <CommandEmpty>Konsentrasi Keahlian tidak ditemukan.</CommandEmpty>
                                                     <CommandGroup>
                                                         {jurusanOptions.map((jurusan) => (
                                                             <CommandItem

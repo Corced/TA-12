@@ -111,7 +111,7 @@ export default function CreateKelasPage() {
         }
 
         if (!formData.jurusan_id || formData.jurusan_id === 0) {
-            newErrors.jurusan_id = 'Jurusan wajib dipilih'
+            newErrors.jurusan_id = 'Konsentrasi Keahlian wajib dipilih'
         }
 
         setErrors(newErrors)
@@ -239,7 +239,7 @@ export default function CreateKelasPage() {
                                 {loadingJurusan ? (
                                     <div className="flex items-center justify-center h-10 border rounded-md bg-gray-50">
                                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-gray-400"></div>
-                                        <span className="ml-2 text-sm text-gray-500">Memuat jurusan...</span>
+                                        <span className="ml-2 text-sm text-gray-500">Memuat Konsentrasi Keahlian...</span>
                                     </div>
                                 ) : (
                                     <Popover open={open} onOpenChange={setOpen}>
@@ -253,15 +253,15 @@ export default function CreateKelasPage() {
                                             >
                                                 {formData.jurusan_id && formData.jurusan_id !== 0
                                                     ? jurusanOptions.find((jurusan) => jurusan.id === formData.jurusan_id)?.nama
-                                                    : "Pilih jurusan..."}
+                                                    : "Pilih Konsentrasi Keahlian..."}
                                                 <School className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                                             </Button>
                                         </PopoverTrigger>
                                         <PopoverContent className="w-full p-0">
                                             <Command>
-                                                <CommandInput placeholder="Cari jurusan..." />
+                                                <CommandInput placeholder="Cari Konsentrasi Keahlian..." />
                                                 <CommandList>
-                                                    <CommandEmpty>Jurusan tidak ditemukan.</CommandEmpty>
+                                                    <CommandEmpty>Konsentrasi Keahlian tidak ditemukan.</CommandEmpty>
                                                     <CommandGroup>
                                                         {jurusanOptions.map((jurusan) => (
                                                             <CommandItem

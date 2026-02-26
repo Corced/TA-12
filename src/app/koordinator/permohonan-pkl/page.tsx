@@ -99,7 +99,7 @@ export default function PermohonanPkl() {
                         <div className="flex gap-2">
                             <Input placeholder="NIS" name="nis" value={newStudent.nis} onChange={handleStudentChange} className="text-xs py-1 h-8 w-1/3" />
                             <Input placeholder="Kelas" name="kelas" value={newStudent.kelas} onChange={handleStudentChange} className="text-xs py-1 h-8 w-1/3" />
-                            <Input placeholder="Jurusan" name="jurusan" value={newStudent.jurusan} onChange={handleStudentChange} className="text-xs py-1 h-8 w-1/3" />
+                            <Input placeholder="Konsentrasi Keahlian" name="jurusan" value={newStudent.jurusan} onChange={handleStudentChange} className="text-xs py-1 h-8 w-1/3" />
                         </div>
                         <Button size="sm" onClick={addStudent} className="w-full bg-[#641E20] hover:bg-[#4a1618] h-8 text-xs">
                             <Plus className="w-3 h-3 mr-1" /> Tambah Siswa

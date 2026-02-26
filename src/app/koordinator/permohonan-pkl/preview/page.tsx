@@ -193,7 +193,7 @@ export default function PermohonanPkl() {
                                 <td className="py-[2px]">: {formData.kelas}</td>
                             </tr>
                             <tr>
-                                <td className="py-[2px]">Jurusan</td>
+                                <td className="py-[2px]">Konsentrasi Keahlian</td>
                                 <td className="py-[2px]">: {formData.jurusan}</td>
                             </tr>
                             <tr>

@@ -279,7 +279,7 @@ export default function SiswaKelompokPage() {
                                                                     <>
                                                                         <DropdownMenuItem onClick={() => router.push(`/siswa/kelompok/edit/${group.id}`)}>
                                                                             <Pencil className="mr-2 h-4 w-4" />
-                                                                            <span>Edit</span>
+                                                                            <span>Sunting</span>
                                                                         </DropdownMenuItem>
                                                                         <DropdownMenuSeparator />
                                                                         <DropdownMenuItem
