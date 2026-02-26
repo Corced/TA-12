@@ -214,7 +214,7 @@ export default function Dashboard() {
                     loadingSiswa ? (
                         <div className="bg-white rounded-2xl p-6 shadow-sm border">
                             <h2 className="text-lg font-semibold mb-4">Profil Peserta didik</h2>
-                            <p className="text-sm text-gray-500 mb-6">Loading...</p>
+                            <p className="text-sm text-gray-500 mb-6">Memuat...</p>
                         </div>
                     ) : siswa && (
                         <div className="bg-white rounded-2xl p-6 shadow-sm border">
