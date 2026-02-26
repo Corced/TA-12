@@ -31,8 +31,6 @@ interface AdminLayoutProps {
 
 const navigation = [
   { name: 'Beranda', href: '/admin', icon: LayoutDashboard },
-  { name: 'Data Master', isHeader: true, href: '#' },
-  { name: 'User', href: '/admin/users', icon: Users },
   { name: 'Siswa', href: '/admin/siswa', icon: Users },
   { name: 'Guru', href: '/admin/guru', icon: GraduationCap },
   { name: 'Kosentrasi Keahlian', href: '/admin/jurusan', icon: BookOpen },
@@ -163,13 +161,6 @@ export function AdminLayout({ children, user }: AdminLayoutProps) {
           {/* Mobile navigation */}
           <nav className="flex-1 space-y-1 px-3 py-4">
             {navigation.map((item) => {
-              if (item.isHeader) {
-                return (
-                  <div key={item.name} className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider mt-4">
-                    {item.name}
-                  </div>
-                )
-              }
               const Icon = item.icon!
               const active = isActive(item.href)
               return (
@@ -230,15 +221,6 @@ export function AdminLayout({ children, user }: AdminLayoutProps) {
           {/* Desktop navigation */}
           <nav className="flex-1 space-y-1 px-3 py-4">
             {navigation.map((item) => {
-              if (item.isHeader) {
-                return !collapsed ? (
-                  <div key={item.name} className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider mt-4">
-                    {item.name}
-                  </div>
-                ) : (
-                  <div key={item.name} className="mt-4 border-t border-gray-200 mx-3"></div>
-                )
-              }
               const Icon = item.icon!
               const active = isActive(item.href)
               return (
